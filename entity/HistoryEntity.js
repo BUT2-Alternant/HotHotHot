@@ -11,6 +11,10 @@ export class HistoryEntity {
         return this.#O_temperatures;
     }
 
+    addTemperature (O_temperature) {
+        this.#O_temperatures.add(O_temperature);
+    }
+
     toString() {
         let S_temperatures = null;
         Array.from(this.#O_temperatures.values()).map((O_temperature) => {
