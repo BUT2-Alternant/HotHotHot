@@ -7,10 +7,19 @@
     <link rel="stylesheet" href="assets/style/homepage.css">
 </head>
 <body>
+<button id="sidebar-toggle">Afficher la sidebar</button>
+
 <header>
     <img src="assets/images/icon.png" alt="" id="icon">
     <h1 role="heading" aria-label="Ce site va vous présenter la météo">Météo actuelle</h1>
 </header>
+
+<div id="sidebar">
+    <ul>
+        <li><a href="homepage.html">Accueil</a></li>
+        <li><a href="#">Page 2</a></li>
+    </ul>
+</div>
 
 <nav id="selecteur">
     <button role="button" aria-label="Afficher les données actuelles" onclick="changerOnglet(event)" id="bouton-donnee"><b>Données</b></button>
@@ -32,7 +41,7 @@
 <section id="chargement" aria-disabled="false">
     <p>Récupération des données en cours...</p>
 </section>
-<script src="script.js"></script>
+<script src="assets/script/script.js"></script>
 </body>
 </html>
 

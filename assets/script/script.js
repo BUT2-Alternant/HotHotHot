@@ -90,31 +90,10 @@ function recupererTemperature(estLaPremiereRecuperation = false) {
 }
 
 /**
- * Fonction qui permet d'envoyer une notification informant de l'ajout d'une nouvelle température
+ * Fonction qui permet d'envoyer une notification
  */
 function notifier(temperature) {
-    if (temperature < 0 || temperature > 30) {
-        // Vérifions si le navigateur prend en charge les notifications
-        if (!('Notification' in window)) {
-            alert('Ce navigateur ne prend pas en charge la notification de bureau')
-        }
-
-        // Vérifions si les autorisations de notification ont déjà été accordées
-        else if (Notification.permission === 'granted') {
-            // Si tout va bien, créons une notification
-            const notification = new Notification("La météo change !");
-        }
-
-        // Sinon, nous devons demander la permission à l'utilisateur
-        else if (Notification.permission !== 'denied') {
-            Notification.requestPermission().then((permission) => {
-                // Si l'utilisateur accepte, créons une notification
-                if (permission === 'granted') {
-                    const notification = new Notification("La météo change !");
-                }
-            })
-        }
-    }
+    //TODO
 }
 
 /**
@@ -184,3 +163,15 @@ recupererTemperature(true);
 
 // Appel de la fonction recupererTemperature toutes 5 minutes
 setInterval(recupererTemperature, 300000);
+
+// Ajout d'un évenement qui permet d'afficher la sidebar
+document.getElementById('sidebar-toggle').addEventListener('click', function() {
+    var button = document.getElementById('sidebar-toggle');
+
+    var sidebar = document.getElementById('sidebar');
+    if (sidebar.style.left === '-200px') {
+        sidebar.style.left = '0';
+    } else {
+        sidebar.style.left = '-200px';
+    }
+});
