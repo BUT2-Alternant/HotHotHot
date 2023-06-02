@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 button#sidebar-toggle {
   width: fit-content;
   float: left;
@@ -10,10 +16,10 @@ button#sidebar-toggle {
   position: fixed;
   top: 0;
   left: -200px;
-  width: 200px;
+  width: 8rem;
   height: 100%;
-  background-color: #333;
-  color: #fff;
+  background-color: rgba(225, 230, 225, 0.7);
+  color: #130E0D;
   transition: left 0.3s ease-in-out;
 }
 
