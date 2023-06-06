@@ -5,21 +5,30 @@
     <title>Hot Hot Hot</title>
     <link rel="icon" href="../assets/images/icon.png" type="image/x-icon"/>
     <link rel="stylesheet" href="../assets/style/homepage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-<button id="sidebar-toggle">Afficher la sidebar</button>
+
+<!-- Code commun a chacune des pages -->
+<button id="sidebar-toggle"><img src="../assets/images/icon_menu.png" alt=""></button>
+
+<nav id="sidebar" style="left: -200px">
+    <ul>
+        <li><a href="homepage.html"><i class="fa fa-home" aria-hidden="true"></i> Accueil</a></li>
+        <li><a href="Documentation.html"><i class="fa fa-file-text" aria-hidden="true"></i> Documentation</a></li>
+    </ul>
+
+    <ul class="sidebar-bot">
+        <li><a href="https://github.com/BUT2-Alternant/HotHotHot"><i class="fa fa-github" aria-hidden="true"></i> GitHub</a></li>
+        <li><a href="Documentation.html">//A COMPLETER</a></li>
+    </ul>
+</nav>
+<!-- fin du code commun a chacune des pages -->
 
 <header>
     <img src="../assets/images/icon.png" alt="" id="icon">
     <h1 role="heading" aria-label="Ce site va vous présenter la météo">Météo actuelle</h1>
 </header>
-
-<div id="sidebar">
-    <ul>
-        <li><a href="homepage.html">Accueil</a></li>
-        <li><a href="Documentation.html">Documentation</a></li>
-    </ul>
-</div>
 
 <nav id="selecteur">
     <button role="button" aria-label="Afficher les données actuelles" onclick="changerOnglet(event)" id="bouton-donnee"><b>Données</b></button>
@@ -42,6 +51,7 @@
     <p>Récupération des données en cours...</p>
 </section>
 <script src="../assets/script/script.js"></script>
+<script src="../assets/script/tabController.js"></script>
 </body>
 </html>
 

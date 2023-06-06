@@ -125,39 +125,6 @@ function afficherTemperature(temperature, classTemperature, message) {
     zoneMessage.innerHTML = message;
 }
 
-/**
- * Fonction qui permet de changer le contenu affiché a l'écran en fonction de l'onglet cliqué
- * @param event
- */
-function changerOnglet(event) {
-    let ongletDonnee = document.getElementById('donnee');
-    let boutonDonnee = document.getElementById('bouton-donnee');
-
-    let ongletHistorique = document.getElementById('historique');
-    let boutonHistorique = document.getElementById('bouton-historique');
-
-
-    if (event.target.innerText === "Données") {
-        ongletDonnee.style.display = "block"
-        ongletDonnee.ariaDisabled = "false"
-        boutonDonnee.style.backgroundColor = "powderblue"
-
-        ongletHistorique.style.display = "none"
-        ongletHistorique.ariaDisabled = "true"
-        boutonHistorique.style.backgroundColor = "lightskyblue"
-
-    } else {
-        ongletDonnee.style.display = "none"
-        ongletDonnee.ariaDisabled = "true"
-        boutonDonnee.style.backgroundColor = "lightskyblue"
-
-        ongletHistorique.style.display = "block"
-        ongletHistorique.ariaDisabled = "false"
-        boutonHistorique.style.backgroundColor = "powderblue"
-
-    }
-}
-
 // Récupération initiale des données
 recupererTemperature(true);
 
@@ -169,9 +136,10 @@ document.getElementById('sidebar-toggle').addEventListener('click', function() {
     var button = document.getElementById('sidebar-toggle');
 
     var sidebar = document.getElementById('sidebar');
+    console.log(sidebar.style.left)
     if (sidebar.style.left === '-200px') {
         sidebar.style.left = '0';
-        button.style.left = '9rem';
+        button.style.left = '10rem';
     } else {
         sidebar.style.left = '-200px';
         button.style.left = '1rem';
