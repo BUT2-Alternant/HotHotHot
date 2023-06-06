@@ -136,6 +136,7 @@ document.getElementById('sidebar-toggle').addEventListener('click', function() {
     var button = document.getElementById('sidebar-toggle');
 
     var sidebar = document.getElementById('sidebar');
+    console.log(sidebar.style.left)
     if (sidebar.style.left === '-200px') {
         sidebar.style.left = '0';
         button.style.left = '9rem';

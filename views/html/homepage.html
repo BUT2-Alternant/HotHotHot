@@ -9,17 +9,17 @@
 <body>
 <button id="sidebar-toggle"><img src="../assets/images/icon_menu.png" alt=""></button>
 
-<header>
-    <img src="../assets/images/icon.png" alt="" id="icon">
-    <h1 role="heading" aria-label="Ce site va vous présenter la météo">Météo actuelle</h1>
-</header>
-
-<div id="sidebar">
+<nav id="sidebar" style="left: -200px">
     <ul>
         <li><a href="homepage.html">Accueil</a></li>
         <li><a href="Documentation.html">Documentation</a></li>
     </ul>
-</div>
+</nav>
+
+<header>
+    <img src="../assets/images/icon.png" alt="" id="icon">
+    <h1 role="heading" aria-label="Ce site va vous présenter la météo">Météo actuelle</h1>
+</header>
 
 <nav id="selecteur">
     <button role="button" aria-label="Afficher les données actuelles" onclick="changerOnglet(event)" id="bouton-donnee"><b>Données</b></button>
