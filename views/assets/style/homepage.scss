@@ -46,16 +46,15 @@ li{
   display: flex;
 }
 #selecteur{
-  background-color: lightskyblue;
   border: none;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   width: 60%;
   margin-left: 20%;
   border-radius: 8px;
 }
 button{
-  width: -webkit-fill-available;
+  width: 23rem;
   height: 2rem;
   background-color: lightskyblue;
   border: none;

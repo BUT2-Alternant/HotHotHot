@@ -139,7 +139,7 @@ document.getElementById('sidebar-toggle').addEventListener('click', function() {
     console.log(sidebar.style.left)
     if (sidebar.style.left === '-200px') {
         sidebar.style.left = '0';
-        button.style.left = '9rem';
+        button.style.left = '10rem';
     } else {
         sidebar.style.left = '-200px';
         button.style.left = '1rem';
