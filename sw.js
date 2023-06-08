@@ -28,14 +28,27 @@ const cacheAddAll = async (...S_src) => {
 };
 
 self.addEventListener("install", (event) => {
-  event.waitUntil(cacheAddAll(...Object.values(O_FILES_PATH), 'https://hothothot.dog/api/capteurs/exterieur'));
+  event.waitUntil(
+    cacheAddAll(
+      ...Object.values(O_FILES_PATH),
+      "https://hothothot.dog/api/capteurs/exterieur"
+    )
+  );
 });
 
+const getFromCaches = async (cache, request) => {
+  const cachedResponse = await cache.match(request);
+  if (cachedResponse && cachedResponse.ok) {
+    return cachedResponse;
+  }
+  return await cache.match(O_FILES_PATH.S_VIEW_FILE_HOMEPAGE_PATH);
+};
+
+// strategy: network first
 self.addEventListener("fetch", (event) => {
   event.respondWith(
     (async () => {
       const cache = await caches.open(S_CACHE_NAME);
-      console.log(test);
       try {
         const fetchResponse = await fetch(event.request);
 
@@ -43,13 +56,14 @@ self.addEventListener("fetch", (event) => {
           cache.put(event.request, fetchResponse.clone());
           return fetchResponse;
         }
+
+        return await getFromCaches(cache, event.request);
+
       } catch (e) {
-        // The network failed
-        const cachedResponse = await cache.match(event.request);
-        if (cachedResponse) {
-          return cachedResponse;
-        }
+        // The network failed, try to get it from the cache.        
+        return await getFromCaches(cache, event.request);
       }
     })()
   );
 });
+
