@@ -22,12 +22,6 @@ export class HistoryModel {
     this.#O_historyEntity.addTemperature(O_temperature);
   }
 
-  addTemperatures(O_temperatures) {
-    O_temperatures.map((O_temperature) => {
-      this.#O_historyEntity.addTemperature(O_temperature);
-    });
-  }
-
   pushHistoryCache() {
     //TODO: push history cache
   }
