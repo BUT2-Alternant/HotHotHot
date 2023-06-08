@@ -1,6 +1,6 @@
 import {WebSocketModel} from "../Model/WebSocketModel";
 import {Observable} from "../Observer/Observable";
-import {O_CONNECTION_STATUS_CONSTANTS} from "../constants/ConnectionConstants";
+import {O_CONNECTION_STATUS_CONSTANTS} from "../Constants/ConnectionConstants";
 
 export class DataService {
     static #O_singleton = null;

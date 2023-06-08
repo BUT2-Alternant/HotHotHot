@@ -1,4 +1,4 @@
-import {O_WEB_SOCKET_CONSTANTS} from "../constants/ConnectionConstants.js";
+import {O_WEB_SOCKET_CONSTANTS} from "../Constants/ConnectionConstants.js";
 
 export class WebSocketModel {
     static #O_singleton = null;

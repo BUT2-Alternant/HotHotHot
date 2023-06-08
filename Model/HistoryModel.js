@@ -1,4 +1,4 @@
-import { HistoryEntity } from "../entity/HistoryEntity.js";
+import { HistoryEntity } from "../Entity/HistoryEntity.js";
 
 export class HistoryModel {
   static #O_singleton = null;
