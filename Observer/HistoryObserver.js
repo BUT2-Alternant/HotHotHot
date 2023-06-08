@@ -5,7 +5,8 @@ export class HistoryObserver extends Observable {
     constructor() {
         if (!HistoryObserver._instance) {
             super();
-            DataService.historyObservable.subscribe(data => {
+            const dataService = new DataService();
+            dataService.historyObservable.subscribe(data => {
                 this.notify(data);
             });
             HistoryObserver._instance = this;
