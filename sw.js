@@ -27,6 +27,15 @@ const cacheAddAll = async (...S_src) => {
     .catch((err) => console.error(err));
 };
 
+const getFromCaches = async (cache, request) => {
+  const cachedResponse = await cache.match(request);
+  if (cachedResponse && cachedResponse.ok) {
+    return cachedResponse;
+  }
+  // todo : maybe redirect to offline page
+  return await cache.match(O_FILES_PATH.S_VIEW_FILE_HOMEPAGE_PATH);
+};
+
 self.addEventListener("install", (event) => {
   event.waitUntil(
     cacheAddAll(
@@ -35,14 +44,6 @@ self.addEventListener("install", (event) => {
     )
   );
 });
-
-const getFromCaches = async (cache, request) => {
-  const cachedResponse = await cache.match(request);
-  if (cachedResponse && cachedResponse.ok) {
-    return cachedResponse;
-  }
-  return await cache.match(O_FILES_PATH.S_VIEW_FILE_HOMEPAGE_PATH);
-};
 
 // strategy: network first
 self.addEventListener("fetch", (event) => {
