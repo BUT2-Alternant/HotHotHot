@@ -1,5 +1,5 @@
-import {S_API_URL} from "../constants/UrlConstants";
-import {TemperatureEntity} from "../entity/TemperatureEntity";
+import {S_API_URL} from "../Constants/ConnectionConstants";
+import {TemperatureEntity} from "../Entity/TemperatureEntity";
 
 export class FetchModel {
     constructor() {
