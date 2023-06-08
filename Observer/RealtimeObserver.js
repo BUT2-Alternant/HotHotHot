@@ -5,7 +5,8 @@ export class RealtimeObserver extends Observable {
     constructor() {
         if (!RealtimeObserver._instance) {
             super();
-            DataService.realtimeObservable.subscribe(data => {
+            const dataService = new DataService();
+            dataService.realtimeObservable.subscribe(data => {
                 this.notify(data);
             });
             RealtimeObserver._instance = this;
