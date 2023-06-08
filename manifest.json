@@ -3,8 +3,8 @@
     "short_name": "Hot Hot Hot",
     "description": "description",
     "start_url": "./views/html/homepage.html",
-    "background_color": "#2f3d58",
-    "theme_color": "#2f3d58",
+    "background_color": "#E1E6E1",
+    "theme_color": "#509CFF",
     "orientation": "any",
     "display": "standalone",
     "icons": [
@@ -12,6 +12,14 @@
             "src": "views/assets/images/icon.png",
             "type": "image/png",
             "sizes": "512x512"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "views/assets/images/manifest/screenshot.webp",
+            "type": "image/webp",
+            "sizes": "1919x947",
+            "label": "homepage"
         }
     ]
 }
