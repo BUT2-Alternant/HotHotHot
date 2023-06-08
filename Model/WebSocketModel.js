@@ -19,8 +19,8 @@ export class WebSocketModel {
     }
 
     reconnect () {
-        //TODO: reconnect
-        return true;
+        this.#O_websocket = new WebSocket(O_WEB_SOCKET_CONSTANTS.url);
+        return this.#O_websocket.readyState === WebSocket.OPEN || this.#O_websocket.readyState === WebSocket.CONNECTING;
     }
 
     isConnected () {

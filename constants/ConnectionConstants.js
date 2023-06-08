@@ -5,5 +5,5 @@ export const O_CONNECTION_STATUS_CONSTANTS = {
 }
 
 export const O_WEB_SOCKET_CONSTANTS = {
-    "url": "wss://data-city.alwaysdata.net/server",
+    "url": "wss://ws.hothothot.dog:9502",
 }
