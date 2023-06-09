@@ -11,8 +11,8 @@ export class FetchModel {
         }
     }
 
-    getOutsideTemperature() {
-        return fetch(S_API_URL + '/exterieur', {
+    async getOutsideTemperature() {
+        return await fetch(S_API_URL + '/exterieur', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -33,8 +33,8 @@ export class FetchModel {
             });
     }
 
-    getInsideTemperature() {
-        return fetch(S_API_URL + '/interieur', {
+    async getInsideTemperature() {
+        return await fetch(S_API_URL + '/interieur', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
