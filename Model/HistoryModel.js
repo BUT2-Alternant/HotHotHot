@@ -1,14 +1,17 @@
 import { HistoryEntity } from "../Entity/HistoryEntity.js";
+const S_CACHE_NAME = "cache-hothothot";
 
 export class HistoryModel {
   static #O_singleton = null;
 
   #O_historyEntity;
+  #S_CACHE_URL_HISTORY;
 
   constructor() {
     if (HistoryModel.#O_singleton === null) {
       HistoryModel.#O_singleton = this;
       this.#O_historyEntity = new HistoryEntity();
+      this.#S_CACHE_URL_HISTORY = "history/data";
     }
 
     return HistoryModel.#O_singleton;
@@ -22,21 +25,33 @@ export class HistoryModel {
     this.#O_historyEntity.addTemperature(O_temperature);
   }
 
-  pushHistoryCache() {
-    //TODO: push history cache
+  async pushHistoryCache() {
+    const cache = await caches.open(S_CACHE_NAME);
+
+    const response = new Response(JSON.stringify(this));
+    await cache.put(this.#S_CACHE_URL_HISTORY, response);
+
+    return response;
   }
 
-  getHistoryCache() {
-    //TODO: get history cache
+  async getHistoryCache() {
+    const cache = await caches.open(S_CACHE_NAME);
+    const response = await cache.match(this.#S_CACHE_URL_HISTORY);
+
+    if (response) {
+      return response.json();
+    }
+
+    return null;
   }
 
-  toString() {
-    const S_string = null;
+  toJSON() {
+    const json = [];
 
-    this.#O_historyEntity.temperatures.map((O_temperature) => {
-        S_string += O_temperature.toString();
-    })
+    Array.from(this.getHistory().values()).map((elm) => {
+      json.push(JSON.stringify(elm));
+    });
 
-    return S_string;
+    return json;
   }
 }
