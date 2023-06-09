@@ -1,9 +1,11 @@
 import {HistoryObserver} from "../Observer/HistoryObserver.js";
-import {DataService} from "../Service/DataService.js";
+import {DataService} from "./DataService.js";
+import {HistoryModel} from "../Model/HistoryModel.js";
 
 export class HistoryService {
     #O_historyObserver;
     #O_dataService;
+    #O_historyModel;
 
     constructor() {
         if (HistoryService._instance) {
@@ -12,11 +14,14 @@ export class HistoryService {
         HistoryService._instance = this;
         this.#O_historyObserver = new HistoryObserver();
         this.#O_dataService = new DataService();
+        this.#O_historyModel = new HistoryModel();
         return this;
     }
 
-    listenHistoryTemperature(callback) {
-        this.#O_historyObserver.subscribe(callback);
+    listenHistoryTemperature() {
+        this.#O_historyObserver.subscribe((data) => {
+            this.#O_historyModel.addTemperature(data);
+        });
     }
 
     getHistoryTemperature() {
