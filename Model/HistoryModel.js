@@ -5,13 +5,12 @@ export class HistoryModel {
   static #O_singleton = null;
 
   #O_historyEntity;
-  #S_CACHE_URL_HISTORY;
+  #S_CACHE_URL_HISTORY = "history/data";
 
   constructor() {
     if (HistoryModel.#O_singleton === null) {
       HistoryModel.#O_singleton = this;
       this.#O_historyEntity = new HistoryEntity();
-      this.#S_CACHE_URL_HISTORY = "history/data";
     }
 
     return HistoryModel.#O_singleton;
@@ -46,12 +45,12 @@ export class HistoryModel {
   }
 
   toJSON() {
-    const json = [];
+    const A_json = [];
 
-    Array.from(this.getHistory().values()).map((elm) => {
-      json.push(JSON.stringify(elm));
+    Array.from(this.getHistory().values()).map((O_elm) => {
+      A_json.push(JSON.stringify(O_elm));
     });
 
-    return json;
+    return A_json;
   }
 }
