@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Hot Hot Hot</title>
+    <link rel="stylesheet" href="../assets/style/temp.css"/>
     <link rel="icon" href="../assets/images/icon.png" type="image/x-icon"/>
     <link rel="stylesheet" href="../assets/style/homepage.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -36,15 +37,43 @@
 </nav>
 
 <section id="donnee" aria-disabled="true">
-    <p id="message" role="alert" aria-live = 'polite'></p>
-    <p id="affichage-temperature">
-        <span>Température actuelle : </span>
-        <span id="temperature" role="alert" aria-live = 'polite'></span>
-    </p>
+    <div class="temperature-div">
+        <div class="temperature-text">
+            <div>
+                Température Extérieure
+            </div>
+            <div id="fieldOutside">
+            </div>
+        </div>
+        <div>
+            <div class="termometer">
+                <div class="temperature" id="temperatureOutside" style="height:0" data-value="0°C"></div>
+                <div class="graduations"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="temperature-div">
+        <div class="temperature-text">
+            <div>
+                Température Intérieure
+            </div>
+            <div id="fieldInside">
+            </div>
+        </div>
+        <div>
+            <div class="termometer">
+                <div class="temperature" id="temperatureInside" style="height:0" data-value="0°C"></div>
+                <div class="graduations"></div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <section id="historique" aria-disabled="true">
-    <ul id="liste-temperature"></ul>
+    <div>
+        <canvas id="temperatureChart" style="width:100%;max-width:700px"></canvas>
+    </div>
 </section>
 
 <section id="chargement" aria-disabled="false">
@@ -52,6 +81,11 @@
 </section>
 <script src="../assets/script/script.js"></script>
 <script src="../assets/script/tabController.js"></script>
+<script
+        src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+</script>
+<script type="module" src="../assets/script/heat.js"></script>
+
 </body>
 </html>
 
