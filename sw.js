@@ -13,7 +13,7 @@ const O_FILES_PATH = {
   S_VIEW_FILE_MANIFEST_PATH: "./manifest.json",
 };
 
-const S_CACHE_NAME = `cache-hothorhot`;
+const S_CACHE_NAME = `cache-hothothot`;
 
 /**
  * @function cacheAddAll - Add all files to cache storage
