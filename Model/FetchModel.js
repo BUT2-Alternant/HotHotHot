@@ -1,5 +1,5 @@
-import {S_API_URL} from "../Constants/ConnectionConstants";
-import {TemperatureEntity} from "../Entity/TemperatureEntity";
+import {S_API_URL} from "../Constants/ConnectionConstants.js";
+import {TemperatureEntity} from "../Entity/TemperatureEntity.js";
 
 export class FetchModel {
     constructor() {
@@ -21,7 +21,7 @@ export class FetchModel {
             .then(response => response.json())
             .then(data => {
                 const temperature = data?.capteurs?.[0];
-                return temperature ? new TemperatureEntity(temperature.Valeur, temperature.Timestamp, 0) : throw new Error("Unable to fetch temperature from API");
+                return temperature ? new TemperatureEntity(temperature.Valeur, temperature.Timestamp, 0) : null;
             })
             .catch(error => {
                 console.error(error);
@@ -39,7 +39,7 @@ export class FetchModel {
             .then(response => response.json())
             .then(data => {
                 const temperature = data?.capteurs?.[0];
-                return temperature ? new TemperatureEntity(temperature.Valeur, temperature.Timestamp, 1) : throw new Error("Unable to fetch temperature from API");
+                return temperature ? new TemperatureEntity(temperature.Valeur, temperature.Timestamp, 1) : null;
             })
             .catch(error => {
                 console.error(error);

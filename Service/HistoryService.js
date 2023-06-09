@@ -1,5 +1,5 @@
-import {HistoryObserver} from "../Observer/HistoryObserver";
-import {DataService} from "../Service/DataService";
+import {HistoryObserver} from "../Observer/HistoryObserver.js";
+import {DataService} from "../Service/DataService.js";
 
 export class HistoryService {
     #O_historyObserver;

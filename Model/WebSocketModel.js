@@ -27,11 +27,11 @@ export class WebSocketModel {
         return this.#O_websocket.readyState === WebSocket.OPEN;
     }
 
-    set onWebSocketMessage (callback) {
+    onWebSocketMessage (callback) {
         this.#O_websocket.addEventListener("message", callback);
     }
 
-    set onWebSocketClose (callback) {
+    onWebSocketClose (callback) {
         this.#O_websocket.addEventListener("close", callback);
     }
 }
