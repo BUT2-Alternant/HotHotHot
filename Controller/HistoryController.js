@@ -4,7 +4,7 @@ export class HistoryController {
         this.#O_historyService = new HistoryService();
     }
 
-    getHistory() {
+    listenHistory() {
         this.#O_historyService.listenHistoryTemperature(history => {
             // TODO : update view with the history of temperature
         });
