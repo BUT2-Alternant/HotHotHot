@@ -6,11 +6,12 @@ export class WebSocketModel {
     #O_websocket;
 
     constructor() {
-        console.log(WebSocketModel.#O_singleton)
-
         if (WebSocketModel.#O_singleton === null) {
             WebSocketModel.#O_singleton = this;
-            this.#O_websocket = new WebSocket(O_WEB_SOCKET_CONSTANTS.url)
+            this.#O_websocket = new WebSocket(O_WEB_SOCKET_CONSTANTS.url);
+            this.#O_websocket.onopen = () => {
+                this.#O_websocket.send("Hello");
+            }
         }
 
         console.log(this.#O_websocket);
@@ -20,11 +21,11 @@ export class WebSocketModel {
 
     reconnect () {
         this.#O_websocket = new WebSocket(O_WEB_SOCKET_CONSTANTS.url);
-        return this.#O_websocket.readyState === WebSocket.OPEN || this.#O_websocket.readyState === WebSocket.CONNECTING;
+        return this.isConnected();
     }
 
     isConnected () {
-        return this.#O_websocket.readyState === WebSocket.OPEN;
+        return this.#O_websocket.readyState === WebSocket.OPEN || this.#O_websocket.readyState === WebSocket.CONNECTING;
     }
 
     onWebSocketMessage (callback) {
@@ -33,5 +34,6 @@ export class WebSocketModel {
 
     onWebSocketClose (callback) {
         this.#O_websocket.addEventListener("close", callback);
+        this.#O_websocket.addEventListener("error", callback);
     }
 }
