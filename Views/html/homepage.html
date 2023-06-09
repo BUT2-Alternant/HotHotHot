@@ -16,6 +16,8 @@
           .catch(error => console.log('Service Worker registration failed:', error));
         }
     </script>
+    <!-- install pwa button -->
+    <script src="../assets/script/pwaInstall.js" defer></script>
 </head>
 <body>
 
@@ -60,7 +62,10 @@
 <section id="chargement" aria-disabled="false">
     <p>Récupération des données en cours...</p>
 </section>
-<script src="../assets/script/script.js"></script>
+
+<button class="add-button">Installer</button>
+
+<script src="../assets/script/script.js" ></script>
 <script src="../assets/script/tabController.js"></script>
 </body>
 </html>

@@ -1,3 +1,5 @@
+const S_CACHE_NAME = "cache-hothothot";
+
 const O_FILES_PATH = {
   S_VIEW_FILE_HOMEPAGE_PATH: "./Views/html/homepage.html",
   S_VIEW_FILE_DOCUMENTATION_PATH: "./Views/html/Documentation.html",
@@ -12,8 +14,6 @@ const O_FILES_PATH = {
   S_VIEW_FILE_ICON_MENU_PATH: "./Views/assets/images/icon_menu.png",
   S_VIEW_FILE_MANIFEST_PATH: "./manifest.json",
 };
-
-const S_CACHE_NAME = `cache-hothothot`;
 
 /**
  * @function cacheAddAll - Add all files to cache storage
@@ -59,12 +59,10 @@ self.addEventListener("fetch", (event) => {
         }
 
         return await getFromCaches(cache, event.request);
-
       } catch (e) {
-        // The network failed, try to get it from the cache.        
+        // The network failed, try to get it from the cache.
         return await getFromCaches(cache, event.request);
       }
     })()
   );
 });
-
