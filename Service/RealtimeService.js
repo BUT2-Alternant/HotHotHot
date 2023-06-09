@@ -13,6 +13,8 @@ export class RealtimeService {
     }
 
     listenRealtimeTemperature(callback) {
-        this.#O_realtimeObserver.subscribe(callback);
+        this.#O_realtimeObserver.subscribe((data) => {
+            callback(data?.interior, data?.exterior);
+        });
     }
 }
