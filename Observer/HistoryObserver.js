@@ -1,5 +1,5 @@
-import {Observable} from "./Observable";
-import {DataService} from "../Service/DataService";
+import {Observable} from "./Observable.js";
+import {DataService} from "../Service/DataService.js";
 
 export class HistoryObserver extends Observable {
     constructor() {

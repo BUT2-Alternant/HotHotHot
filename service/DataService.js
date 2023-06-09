@@ -1,6 +1,6 @@
-import {WebSocketModel} from "../Model/WebSocketModel";
-import {Observable} from "../Observer/Observable";
-import {O_CONNECTION_STATUS_CONSTANTS} from "../Constants/ConnectionConstants";
+import {WebSocketModel} from "../Model/WebSocketModel.js";
+import {Observable} from "../Observer/Observable.js";
+import {O_CONNECTION_STATUS_CONSTANTS} from "../Constants/ConnectionConstants.js";
 
 export class DataService {
     static #O_singleton = null;
@@ -15,10 +15,12 @@ export class DataService {
 
             this.#O_websocketModel = new WebSocketModel();
             this.#I_connectionStatus = O_CONNECTION_STATUS_CONSTANTS.websocket;
-            this.#listenWebSocket();
+
 
             this.#O_realtimeObservable = new Observable();
             this.#O_historyObservable = new Observable();
+
+            this.#listenWebSocket();
         }
 
         return DataService.#O_singleton;
@@ -31,8 +33,8 @@ export class DataService {
 
     #onMessageWebSocketCallBack (event) {
         console.log(event);
-        this.#O_realtimeObservable.notify(event);
-        this.#O_historyObservable.notify(event);
+        DataService.#O_singleton.#O_realtimeObservable.notify(event);
+        DataService.#O_singleton.#O_historyObservable.notify(event);
     }
 
     #onCloseWebSocketCallBack (event) {

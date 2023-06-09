@@ -1,4 +1,4 @@
-import {RealtimeObserver} from "../Observer/RealtimeObserver";
+import {RealtimeObserver} from "../Observer/RealtimeObserver.js";
 
 export class RealtimeService {
     #O_realtimeObserver ;
