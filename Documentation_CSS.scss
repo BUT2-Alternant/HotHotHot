@@ -1,0 +1,115 @@
+// Déclaration des variables de couleur
+$primary-color: #337ab7;
+$secondary-color: #555555;
+$team-member-spacing: 40px; // Espacement entre les membres de l'équipe
+$team-member-image-width: 120px; // Largeur de l'image du membre de l'équipe
+$team-member-image-height: 110px; // Hauteur de l'image du membre de l'équipe
+
+// Styles généraux
+body {
+  font-family: Arial, sans-serif;
+  color: $secondary-color;
+  margin: 20px;
+}
+
+h1 {
+  color: $primary-color;
+}
+
+h2 {
+  color: $primary-color;
+  margin-top: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+
+  th,
+  td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid $secondary-color;
+  }
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+}
+
+// Personnalisation des éléments spécifiques
+
+// Équipe
+.team {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 10px;
+
+  span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: $team-member-spacing;
+
+    img {
+      width: $team-member-image-width;
+      height: $team-member-image-height;
+    }
+  }
+
+  span:last-child {
+    margin-right: 0;
+  }
+}
+
+// Outils utilisés et organisation
+ul:nth-child(4) {
+  margin-top: 5px;
+}
+
+// Planning de réalisation
+table {
+  margin-top: 5px;
+
+  th {
+    background-color: $primary-color;
+    color: #ffffff;
+  }
+
+  td {
+    background-color: #f5f5f5;
+  }
+
+  th:first-child,
+  td:first-child {
+    padding-left: 0; // Réduction de l'espacement à gauche de la première colonne
+  }
+
+  th:last-child,
+  td:last-child {
+    padding-right: 0; // Réduction de l'espacement à droite de la dernière colonne
+  }
+}
+
+// Difficultés rencontrées et solutions apportées
+ol {
+  margin-top: 5px;
+
+  li {
+    padding-bottom: 5px; // Réduction de l'espacement entre les éléments de la liste
+  }
+}
+
+// Améliorations possibles
+ul:last-child {
+  margin-top: 5px;
+}
