@@ -1,7 +1,7 @@
 import {WebSocketModel} from "../Model/WebSocketModel.js";
 import {Observable} from "../Observer/Observable.js";
 import {O_CONNECTION_STATUS_CONSTANTS} from "../Constants/ConnectionConstants.js";
-import {FetchModel} from "../Model/FetchModel";
+import {FetchModel} from "../Model/FetchModel.js";
 
 export class DataService {
     static #O_singleton = null;
