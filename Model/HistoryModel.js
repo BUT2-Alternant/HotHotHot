@@ -1,4 +1,5 @@
 import { HistoryEntity } from "../Entity/HistoryEntity.js";
+import {TemperatureEntity} from "../Entity/TemperatureEntity.js";
 const S_CACHE_NAME = "cache-hothothot";
 
 export class HistoryModel {
@@ -21,7 +22,7 @@ export class HistoryModel {
     return this.#O_historyEntity.temperatures;
   }
 
-  addTemperature(O_temperature) {
+  async addTemperature(O_temperature) {
     this.#O_historyEntity.addTemperature(O_temperature);
     await this.#pushHistoryCache();
   }
@@ -47,15 +48,5 @@ export class HistoryModel {
         this.#O_historyEntity.addTemperature(new TemperatureEntity(O_temperature.temperature, O_temperature.timestamp, O_temperature.location));
       });
     }
-  }
-
-  toJSON() {
-    const A_json = [];
-
-    Array.from(this.getHistory().values()).map((O_elm) => {
-      A_json.push(JSON.stringify(O_elm));
-    });
-
-    return A_json;
   }
 }

@@ -2,6 +2,7 @@ import {WebSocketModel} from "../Model/WebSocketModel.js";
 import {Observable} from "../Observer/Observable.js";
 import {O_CONNECTION_STATUS_CONSTANTS} from "../Constants/ConnectionConstants.js";
 import {FetchModel} from "../Model/FetchModel.js";
+import {HistoryModel} from "../Model/HistoryModel.js";
 
 export class DataService {
     static #O_singleton = null;
@@ -11,6 +12,7 @@ export class DataService {
     #O_historyObservable;
     #I_connectionStatus;
     #O_fetchModel;
+    #O_historyModel;
 
     constructor() {
         if (DataService.#O_singleton === null) {
@@ -19,6 +21,7 @@ export class DataService {
             this.#O_websocketModel = new WebSocketModel();
             this.#I_connectionStatus = O_CONNECTION_STATUS_CONSTANTS.websocket;
             this.#O_fetchModel = new FetchModel();
+            this.#O_historyModel = new HistoryModel();
 
             this.#O_realtimeObservable = new Observable();
             this.#O_historyObservable = new Observable();

@@ -27,4 +27,14 @@ export class HistoryEntity {
         })
         return S_temperatures;
     }
+
+    toJSON() {
+        const A_json = [];
+
+        Array.from(this.#O_temperatures.values()).map((O_elm) => {
+            A_json.push(JSON.stringify(O_elm));
+        });
+
+        return A_json;
+    }
 }
