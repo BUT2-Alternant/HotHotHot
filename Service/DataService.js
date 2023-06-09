@@ -58,33 +58,13 @@ export class DataService {
                         "interior": interior
                     }
                     this.#O_realtimeObservable.notify(temperatures);
+                    this.#O_historyObservable.notify(temperatures);
                 }
                 DataService.#B_fetchIsRunning = false;
             }, 5000);
         });
     }
 
-    // async #fetchData() {
-    //     if (this.#O_websocketModel.reconnect()) {
-    //         this.#I_connectionStatus = O_CONNECTION_STATUS_CONSTANTS.websocket;
-    //     } else {
-    //         return await this.#asyncFetch()
-    //     }
-    // }
-    //
-    // async #asyncFetch() {
-    //     this.exterior = await this.#O_fetchModel.getOutsideTemperature();
-    //     this.interior = await this.#O_fetchModel.getInsideTemperature();
-    //     const temperatures = {
-    //         "exterior": this.exterior,
-    //         "interior": this.interior
-    //     }
-    //
-    //     console.log(temperatures)
-    //
-    //     this.#O_realtimeObservable.notify(temperatures);
-    //     setTimeout(await this.#fetchData(), 30000);
-    // }
 
     get realtimeObservable() {
         return this.#O_realtimeObservable;
@@ -92,5 +72,9 @@ export class DataService {
 
     get historyObservable() {
         return this.#O_historyObservable;
+    }
+
+    getHistoryTemperature() {
+        return this.#O_historyModel.getHistory();
     }
 }

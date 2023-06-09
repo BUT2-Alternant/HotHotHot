@@ -1,5 +1,6 @@
 import {HistoryObserver} from "../Observer/HistoryObserver.js";
-import {DataService} from "../Service/DataService.js";
+import {DataService} from "./DataService.js";
+import {HistoryModel} from "../Model/HistoryModel.js";
 
 export class HistoryService {
     #O_historyObserver;
@@ -15,8 +16,10 @@ export class HistoryService {
         return this;
     }
 
-    listenHistoryTemperature(callback) {
-        this.#O_historyObserver.subscribe(callback);
+    listenHistoryTemperature() {
+        this.#O_historyObserver.subscribe((data) => {
+            this.#O_historyModel.addTemperature(data);
+        });
     }
 
     getHistoryTemperature() {
