@@ -11,9 +11,9 @@
 <body>
 
 <!-- Code commun a chacune des pages -->
-<button id="sidebar-toggle"><img src="../assets/images/icon_menu.png" alt=""></button>
+<button id="sidebar-toggle"><i class='fa fa-bars icon-sidebar' aria-hidden='true'></i></button>
 
-<nav id="sidebar" style="left: -200px">
+<nav id="sidebar" style="left: -16em">
     <ul>
         <li><a href="homepage.html"><i class="fa fa-home" aria-hidden="true"></i> Accueil</a></li>
         <li><a href="Documentation.html"><i class="fa fa-file-text" aria-hidden="true"></i> Documentation</a></li>
@@ -21,7 +21,10 @@
 
     <ul class="sidebar-bot">
         <li><a href="https://github.com/BUT2-Alternant/HotHotHot"><i class="fa fa-github" aria-hidden="true"></i> GitHub</a></li>
-        <li><a href="Documentation.html">//A COMPLETER</a></li>
+        <li><b>Crédits : Flaticon created by Freepik</b></li>
+        <li><a href="https://www.flaticon.com/free-icons/new-house" title="new house icons">New house icons</a></li>
+        <li><a href="https://www.flaticon.com/free-icons/hot" title="hot icons">Hot icons</a></li>
+        <li><a href="https://www.flaticon.com/free-icons/graph" title="graph icons">Graph icons</a></li>
     </ul>
 </nav>
 <!-- fin du code commun a chacune des pages -->
@@ -32,16 +35,24 @@
 </header>
 
 <nav id="selecteur">
-    <button role="button" aria-label="Afficher les données actuelles" onclick="changerOnglet(event)" id="bouton-donnee"><b>Données</b></button>
-    <button role="button" aria-label="Afficher l'historique" onclick="changerOnglet(event)" id="bouton-historique"><b>Historique</b></button>
+    <button role="button" aria-label="Afficher les données actuelles" onclick="changerOnglet(event)" id="bouton-donnee">
+        <div class="onglet-style"><b>Données</b><img src="../assets/images/hot.png" alt="thermometer"></div>
+    </button>
+    <button role="button" aria-label="Afficher l'historique" onclick="changerOnglet(event)" id="bouton-historique">
+        <div class="onglet-style"><b>Historique</b><img src="../assets/images/bar-graph.png" alt="bar graph"></div>
+    </button>
 </nav>
 
 <section id="donnee" aria-disabled="true">
     <div class="temperature-div">
         <div class="temperature-text">
-            <div>
-                Température Extérieure
+            <div class="header-temperature">
+                <h2>Température Extérieure </h2>
+                <img src="../assets/images/garden.png" alt="Garden">
             </div>
+            <br>
+            <p>Température obtenue depuis un capteur situé sur le rebord d'une fenêtre, à l'éxtérieur.</p>
+            <br>
             <div id="fieldOutside">
             </div>
         </div>
@@ -55,9 +66,13 @@
 
     <div class="temperature-div">
         <div class="temperature-text">
-            <div>
-                Température Intérieure
+            <div class="header-temperature">
+                <h2>Température Intérieure </h2>
+                <img src="../assets/images/house.png" alt="House">
             </div>
+            <br>
+            <p>Température obtenue depuis un capteur situé à l'intérieur d'une maison.</p>
+            <br>
             <div id="fieldInside">
             </div>
         </div>
@@ -71,15 +86,16 @@
 </section>
 
 <section id="historique" aria-disabled="true">
+    <h2></h2>
     <div>
-        <canvas id="temperatureChart" style="width:100%;max-width:700px"></canvas>
+        <canvas id="temperatureChart"></canvas>
     </div>
 </section>
 
 <section id="chargement" aria-disabled="false">
     <p>Récupération des données en cours...</p>
 </section>
-<script src="../assets/script/script.js"></script>
+<script src="../assets/script/sidebarController.js"></script>
 <script src="../assets/script/tabController.js"></script>
 <script
         src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">

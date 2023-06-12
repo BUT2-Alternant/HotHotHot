@@ -33,8 +33,8 @@ export class DataService {
 
     #onMessageWebSocketCallBack (event) {
         console.log(event);
-        DataService.#O_singleton.#O_realtimeObservable.notify(event);
-        DataService.#O_singleton.#O_historyObservable.notify(event);
+        this.#O_singleton.#O_realtimeObservable.notify(event);
+        this.#O_singleton.#O_historyObservable.notify(event);
     }
 
     #onCloseWebSocketCallBack (event) {

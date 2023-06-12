@@ -4,6 +4,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: math;
+}
+
+.icon-sidebar{
+  width: 32px;
 }
 
 button#sidebar-toggle {
@@ -14,17 +19,21 @@ button#sidebar-toggle {
   left: 1rem;
 }
 
+button#sidebar-toggle {
+  transition: left 0.3s ease-in-out;
+}
+
 #sidebar {
   position: fixed;
   top: 0;
-  width: 9rem;
+  width: 15rem;
   height: 100%;
-  background-color: rgba(variable.$platinum-neutral, 0.7);
+  background-color: variable.$global_modal_background;
   color: black;
   transition: left 0.3s ease-in-out;
 
   .sidebar-bot{
-    bottom: 0;
+    bottom: 1rem;
     position: absolute;
   }
 }
@@ -35,7 +44,11 @@ button#sidebar-toggle {
 }
 
 #sidebar ul li {
-  padding: 10px;
+  padding: 10px 10px 10px 20px;
+}
+
+#sidebar.open {
+  transition: left 0.3s ease-in-out;
 }
 
 img {

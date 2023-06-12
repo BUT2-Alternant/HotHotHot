@@ -13,20 +13,20 @@ function changerOnglet(event) {
     if (event.target.innerText === "Données") {
         ongletDonnee.style.display = "block"
         ongletDonnee.ariaDisabled = "false"
-        boutonDonnee.style.backgroundColor = "powderblue"
+        boutonDonnee.style.backgroundColor = "#97B2EC"
 
         ongletHistorique.style.display = "none"
         ongletHistorique.ariaDisabled = "true"
-        boutonHistorique.style.backgroundColor = "lightskyblue"
+        boutonHistorique.style.backgroundColor = "#D3E0EF"
 
     } else {
         ongletDonnee.style.display = "none"
         ongletDonnee.ariaDisabled = "true"
-        boutonDonnee.style.backgroundColor = "lightskyblue"
+        boutonDonnee.style.backgroundColor = "#D3E0EF"
 
         ongletHistorique.style.display = "block"
         ongletHistorique.ariaDisabled = "false"
-        boutonHistorique.style.backgroundColor = "powderblue"
+        boutonHistorique.style.backgroundColor = "#97B2EC"
 
     }
 }

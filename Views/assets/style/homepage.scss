@@ -1,18 +1,19 @@
 @use "main";
+@use "variable";
 
-#temperature{
+#temperature {
   width: 4em;
   text-align: center;
   margin-left: 1em;
 }
 
-#icon{
+#icon {
   width: 4em;
   height: 4em;
   margin-right: 1em;
 }
 
-header{
+header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,7 +25,7 @@ h1 {
   font-size: 26px;
 }
 
-#donnee, #historique, #chargement{
+#donnee, #historique, #chargement {
   margin-left: 20%;
   background-color: aliceblue;
   width: 60%;
@@ -34,18 +35,32 @@ h1 {
   margin-top: 1rem;
 }
 
-#historique, #donnee{
+.header-temperature{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.onglet-style{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#historique, #donnee {
   display: none;
 }
 
-li{
+
+li {
   margin-top: 1rem;
 }
 
-#affichage-temperature{
+#affichage-temperature {
   display: flex;
 }
-#selecteur{
+
+#selecteur {
   border: none;
   display: flex;
   justify-content: space-around;
@@ -53,36 +68,37 @@ li{
   margin-left: 20%;
   border-radius: 8px;
 }
-button{
+
+button {
   width: 23rem;
   height: 2rem;
-  background-color: lightskyblue;
+  background-color: variable.$global_modal_background;
   border: none;
   border-radius: 8px;
 }
 
-button:hover{
-  background-color: powderblue;
+button:hover {
+  background-color: variable.$global_modal_background_hover;
   cursor: pointer;
 }
 
-#message{
+#message {
   height: 2em;
   margin-top: 1rem;
 }
 
-.froid{
+.cold {
   border: 2px solid blue;
 }
 
-.normal{
+.normal {
   border: 2px solid green;
 }
 
-.chaud{
+.chaud {
   border: 2px solid orange;
 }
 
-.tres-chaud{
+.tres-chaud {
   border: 2px solid red;
 }
