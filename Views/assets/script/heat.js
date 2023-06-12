@@ -1,5 +1,6 @@
 import {RealtimeService} from "../../../Service/RealtimeService.js";
 import {FetchService} from "../../../Service/FetchService.js";
+import RecommandationsManager from "./recommendation";
 
 let donneeChargee = false;
 localStorage.setItem("donneeChargee", donneeChargee);
@@ -46,7 +47,7 @@ fecthtime.installListenerFetchOutside(function (a) {
     donneeChargee = true;
     localStorage.setItem("temperature", value);
 
-    afficherRecommandations(value);
+    RecommandationsManager.afficherRecommandations(value);
     messageWaitData("donnee");
 });
 
@@ -103,5 +104,6 @@ function plotGraph() {
 }
 
 setInterval(plotGraph, 5000);
+
 
 
