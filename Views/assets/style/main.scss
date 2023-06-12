@@ -1,14 +1,19 @@
 @use "variable";
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: math;
 }
 
-.icon-sidebar{
+.icon-sidebar {
   width: 32px;
+}
+
+.icons-sidebar {
+  width: 25px;
+  vertical-align: bottom;
 }
 
 button#sidebar-toggle {
@@ -21,18 +26,20 @@ button#sidebar-toggle {
 
 button#sidebar-toggle {
   transition: left 0.3s ease-in-out;
+  z-index: 1;
 }
 
 #sidebar {
   position: fixed;
+  z-index: 1;
   top: 0;
   width: 15rem;
   height: 100%;
-  background-color: variable.$global_modal_background;
+  background-color: variable.$global_section_background;
   color: black;
   transition: left 0.3s ease-in-out;
 
-  .sidebar-bot{
+  .sidebar-bot {
     bottom: 1rem;
     position: absolute;
   }
@@ -43,8 +50,18 @@ button#sidebar-toggle {
   padding: 0;
 }
 
+h3 {
+  text-align: center;
+  margin-top: 1em;
+}
+
 #sidebar ul li {
   padding: 10px 10px 10px 20px;
+}
+
+.sidebar-bot li {
+  padding: 10px 10px 0 10px !important;
+  margin: 0;
 }
 
 #sidebar.open {

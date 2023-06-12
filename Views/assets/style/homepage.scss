@@ -27,7 +27,7 @@ h1 {
 
 #donnee, #historique, #chargement {
   margin-left: 20%;
-  background-color: aliceblue;
+  background-color: variable.$global_section_background;
   width: 60%;
   margin-right: 20%;
   border-radius: 8px;
@@ -35,13 +35,13 @@ h1 {
   margin-top: 1rem;
 }
 
-.header-temperature{
+.header-temperature {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.onglet-style{
+.onglet-style {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,6 +80,63 @@ button {
 button:hover {
   background-color: variable.$global_modal_background_hover;
   cursor: pointer;
+}
+
+#outfit-icons {
+  display: flex;
+  align-items: center;
+}
+
+#outfit-icons {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  animation: fade-in 0.5s ease-in-out forwards;
+  justify-content: space-evenly;
+}
+
+.outfit-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.outfit-icon i {
+  font-size: 48px;
+}
+
+.outfit-text {
+  margin-top: 10px;
+  text-align: center;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#recommendations-sidebar {
+  width: 205px;
+  height: 85%;
+  position: fixed;
+  left: 1rem;
+  top: 5rem;
+  background-color: variable.$global_section_background;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.cloth {
+  width: 4em;
+  padding: 0;
+  margin: 0;
 }
 
 #message {

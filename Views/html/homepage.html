@@ -14,17 +14,25 @@
 <button id="sidebar-toggle"><i class='fa fa-bars icon-sidebar' aria-hidden='true'></i></button>
 
 <nav id="sidebar" style="left: -16em">
+    <h3 role="heading" >Météo actuelle</h3>
     <ul>
-        <li><a href="homepage.html"><i class="fa fa-home" aria-hidden="true"></i> Accueil</a></li>
-        <li><a href="Documentation.html"><i class="fa fa-file-text" aria-hidden="true"></i> Documentation</a></li>
+        <li><a href="homepage.html"><img src="../assets/images/house2.png" class="icons-sidebar" alt="Accueil"> Accueil</a></li>
+        <li><a href="Documentation.html"><img src="../assets/images/documentation.png" class="icons-sidebar" alt="Documentation"> Documentation</a></li>
+        <li><a href="https://github.com/BUT2-Alternant/HotHotHot"><img src="../assets/images/github-sign.png" class="icons-sidebar" alt="Documentation"> Notre GitHub</a></li>
+
     </ul>
 
     <ul class="sidebar-bot">
-        <li><a href="https://github.com/BUT2-Alternant/HotHotHot"><i class="fa fa-github" aria-hidden="true"></i> GitHub</a></li>
-        <li><b>Crédits : Flaticon created by Freepik</b></li>
-        <li><a href="https://www.flaticon.com/free-icons/new-house" title="new house icons">New house icons</a></li>
-        <li><a href="https://www.flaticon.com/free-icons/hot" title="hot icons">Hot icons</a></li>
-        <li><a href="https://www.flaticon.com/free-icons/graph" title="graph icons">Graph icons</a></li>
+        <li><b>Crédits :</b></li>
+        <li><a href="https://www.flaticon.com/authors/freepik" title="thermomètre icônes">Freepik</a></li>
+        <li><a href="https://www.flaticon.com/authors/rizky-maulidhani" title="écharpe icônes">rizky maulidhani</a></li>
+        <li><a href="https://www.flaticon.com/authors/superarticons" title="veste icônes">Superarticons</a></li>
+        <li><a href="https://www.flaticon.com/authors/creativenoys01" title="hiver icônes">Creativenoys01</a></li>
+        <li><a href="https://www.flaticon.com/authors/victoruler" title="veste icônes">Victoruler</a></li>
+        <li><a href="https://www.flaticon.com/authors/juicy-fish" title="t-shirt icônes">juicy_fish</a></li>
+        <li><a href="https://www.flaticon.com/authors/monkik" title="pantalon icônes">monkik</a></li>
+        <li><a href="https://www.flaticon.com/authors/good-ware" title="hydratant icônes">Good Ware</a></li>
+        <li><a href="https://www.flaticon.com/authors/juicy-fish" title="short en jean icônes">juicy_fish</a></li>
     </ul>
 </nav>
 <!-- fin du code commun a chacune des pages -->
@@ -42,6 +50,12 @@
         <div class="onglet-style"><b>Historique</b><img src="../assets/images/bar-graph.png" alt="bar graph"></div>
     </button>
 </nav>
+
+<div id="recommendations-sidebar" style="display: none">
+    <b>Tenue recommandée</b>
+    <div id="outfit-icons"></div>
+</div>
+
 
 <section id="donnee" aria-disabled="true">
     <div class="temperature-div">
@@ -101,6 +115,7 @@
         src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
 </script>
 <script type="module" src="../assets/script/heat.js"></script>
+<script type="module" src="../assets/script/recommandation.js"></script>
 
 </body>
 </html>
