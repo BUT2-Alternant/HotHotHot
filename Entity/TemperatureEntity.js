@@ -26,6 +26,14 @@ export class TemperatureEntity {
     return O_date.toLocaleDateString() + " " + O_date.toLocaleTimeString();
   }
 
+  static fromJSON(json){
+    return new TemperatureEntity(parseFloat(json["Valeur"]), parseInt(json["Timestamp"]), json["Nom"]=="interieur" ? 1 : 0)
+  }
+
+  static fromJSONText(text){
+    return TemperatureEntity.fromJSON(JSON.parse(text));
+  }
+
   toJSON() {
     return {
       temperature: this.#I_temperature,

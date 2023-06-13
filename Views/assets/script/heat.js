@@ -1,9 +1,16 @@
 import {RealtimeService} from "../../../Service/RealtimeService.js";
 import {FetchService} from "../../../Service/FetchService.js";
+import {RealtimeController} from "../../../Controller/RealTimeController.js";
 import RecommandationsManager from "./recommendation.js";
+import {HistoryController} from "../../../Controller/HistoryController.js";
 
 let donneeChargee = false;
 localStorage.setItem("donneeChargee", donneeChargee);
+
+let realtimecontroller = new RealtimeController();
+let historycontroller = new HistoryController();
+
+historycontroller.listenHistory();
 
 function messageWaitData(idSection) {
     let display = document.getElementById(idSection);
@@ -39,7 +46,27 @@ const fieldInside = document.getElementById("fieldInside");
 
 let fecthtime = new FetchService();
 
-fecthtime.installListenerFetchOutside(function (a) {
+realtimecontroller.getTemperature(function (data) {
+    const tempExt = data[0];
+    const tempOut = data[1];
+
+    const value = tempExt.temperature;
+    fieldOutside.innerText = value + "°C";
+    temperatureOutside.style.height = (value - config.minTemp) / (config.maxTemp - config.minTemp) * 100 + "%";
+    temperatureOutside.dataset.value = value + "°C";
+    donneeChargee = true;
+    localStorage.setItem("temperature", value);
+
+    RecommandationsManager.afficherRecommandations(value);
+    messageWaitData("donnee");
+
+    const value2 = tempOut.temperature;
+    fieldInside.innerText = value2 + "°C";
+    temperatureInside.style.height = (value2 - config.minTemp) / (config.maxTemp - config.minTemp) * 100 + "%";
+    temperatureInside.dataset.value = value2 + "°C";
+});
+
+/*fecthtime.installListenerFetchOutside(function (a) {
     const value = a.temperature;
     fieldOutside.innerText = value + "°C";
     temperatureOutside.style.height = (value - config.minTemp) / (config.maxTemp - config.minTemp) * 100 + "%";
@@ -56,17 +83,23 @@ fecthtime.installListenerFetchInside(function (a) {
     fieldInside.innerText = value + "°C";
     temperatureInside.style.height = (value - config.minTemp) / (config.maxTemp - config.minTemp) * 100 + "%";
     temperatureInside.dataset.value = value + "°C";
-});
+});*/
 
 
-function plotGraph() {
-    const tempOutside = fecthtime.getOutsideTemperature();
-    const tempInside = fecthtime.getInsideTemperature();
+async function plotGraph() {
+    const temps = Array.from(await historycontroller.getHistoryTemperature());
+    const lastElement = temps.slice(-40);
+    let lastOutside=[];
+    let lastInside=[];
+
     // 20 dernières
-    const lengthOutside = tempOutside.length - 20;
-    const lengthInside = tempInside.length - 20;
-    const lastOutside = tempOutside.slice(lengthOutside < 0 ? 0 : lengthOutside);
-    const lastInside = tempInside.slice(lengthInside < 0 ? 0 : lengthInside);
+    for(let i=0; i<lastElement.length; i++){
+        if(lastElement[i].temperatureLocation==0){
+            lastOutside.push(lastElement[i]);
+        }else{
+            lastInside.push(lastElement[i]);
+        }
+    }
 
     let xValues = []; //label en x
     let OValues = []; // outside en y
@@ -76,8 +109,13 @@ function plotGraph() {
         const timestamp = lastInside[i].timestamp;
         const datetime = new Date(timestamp * 1000);
         xValues.push(datetime.toLocaleString());
-        OValues.push(lastOutside[i].temperature);
-        IValues.push(lastInside[i].temperature);
+        if(i<lastOutside.length) {
+            OValues.push(lastOutside[i].temperature);
+        }
+
+        if(i<lastInside.length) {
+            IValues.push(lastInside[i].temperature);
+        }
     }
 
     new Chart("temperatureChart", {

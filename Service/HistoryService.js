@@ -20,11 +20,12 @@ export class HistoryService {
 
     listenHistoryTemperature() {
         this.#O_historyObserver.subscribe((data) => {
+            console.log(data);
             this.#O_historyModel.addTemperature(data);
         });
     }
 
-    getHistoryTemperature() {
-        return this.#O_dataService.getHistoryTemperature();
+    async getHistoryTemperature() {
+        return await this.#O_dataService.getHistoryTemperature();
     }
 }

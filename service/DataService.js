@@ -3,6 +3,7 @@ import {Observable} from "../Observer/Observable.js";
 import {O_CONNECTION_STATUS_CONSTANTS} from "../Constants/ConnectionConstants.js";
 import {FetchModel} from "../Model/FetchModel.js";
 import {HistoryModel} from "../Model/HistoryModel.js";
+import {TemperatureEntity} from "../Entity/TemperatureEntity.js";
 
 export class DataService {
     static #O_singleton = null;
@@ -38,12 +39,15 @@ export class DataService {
 
     #listenWebSocket() {
         this.#O_websocketModel.onWebSocketMessage((event) => {
-            console.log(event);
-            this.#O_realtimeObservable.notify(event);
-            this.#O_historyObservable.notify(event);
+            console.log(event.data);
+            const data = TemperatureEntity.fromJSON(JSON.parse(event.data).capteurs[0]);
+            const data2 = TemperatureEntity.fromJSON(JSON.parse(event.data).capteurs[1]);
+
+            this.#O_realtimeObservable.notify([data,data2]);
+            this.#O_historyObservable.notify([data,data2]);
         });
         this.#O_websocketModel.onWebSocketClose((event) => {
-            console.log(event);
+            console.log(" END: "+event);
             this.setConnectionStatus(O_CONNECTION_STATUS_CONSTANTS.fetch);
             const O_interval = setInterval(async () => {
                 if (DataService.#B_fetchIsRunning) {
@@ -77,7 +81,7 @@ export class DataService {
         return this.#O_historyObservable;
     }
 
-    getHistoryTemperature() {
-        return this.#O_historyModel.getHistory();
+    async getHistoryTemperature() {
+        return await this.#O_historyModel.getHistory();
     }
 }
