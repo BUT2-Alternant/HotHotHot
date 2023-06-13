@@ -1,4 +1,3 @@
-// Ajout d'un événement qui permet d'afficher la sidebar
 document.getElementById('sidebar-toggle').addEventListener('click', function() {
     var button = document.getElementById('sidebar-toggle');
     var sidebar = document.getElementById('sidebar');

@@ -1,6 +1,6 @@
 import {RealtimeService} from "../../../Service/RealtimeService.js";
 import {FetchService} from "../../../Service/FetchService.js";
-import RecommandationsManager from "./recommendation";
+import RecommandationsManager from "./recommendation.js";
 
 let donneeChargee = false;
 localStorage.setItem("donneeChargee", donneeChargee);
