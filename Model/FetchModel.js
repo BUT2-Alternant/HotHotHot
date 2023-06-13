@@ -11,8 +11,8 @@ export class FetchModel {
         }
     }
 
-    getOutsideTemperature() {
-        return fetch(S_API_URL + '/exterieur', {
+    async getOutsideTemperature() {
+        return await fetch(S_API_URL + '/exterieur', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -21,7 +21,11 @@ export class FetchModel {
             .then(response => response.json())
             .then(data => {
                 const temperature = data?.capteurs?.[0];
-                return temperature ? new TemperatureEntity(temperature.Valeur, temperature.Timestamp, 0) : null;
+                if (temperature) {
+                    return new TemperatureEntity(temperature.Valeur, temperature.Timestamp, 0);
+                } else {
+                    throw new Error("Unable to fetch outside temperature from API.");
+                }
             })
             .catch(error => {
                 console.error(error);
@@ -29,8 +33,8 @@ export class FetchModel {
             });
     }
 
-    getInsideTemperature() {
-        return fetch(S_API_URL + '/interieur', {
+    async getInsideTemperature() {
+        return await fetch(S_API_URL + '/interieur', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -39,7 +43,11 @@ export class FetchModel {
             .then(response => response.json())
             .then(data => {
                 const temperature = data?.capteurs?.[0];
-                return temperature ? new TemperatureEntity(temperature.Valeur, temperature.Timestamp, 1) : null;
+                if (temperature) {
+                    return new TemperatureEntity(temperature.Valeur, temperature.Timestamp, 1);
+                } else {
+                    throw new Error("Unable to fetch outside temperature from API.");
+                }
             })
             .catch(error => {
                 console.error(error);

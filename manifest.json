@@ -1,0 +1,25 @@
+{
+    "name": "Hot Hot Hot Progressive Web Application",
+    "short_name": "Hot Hot Hot",
+    "description": "description",
+    "start_url": "./Views/html/homepage.html",
+    "background_color": "#E1E6E1",
+    "theme_color": "#509CFF",
+    "orientation": "any",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "Views/assets/images/icon.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "Views/assets/images/manifest/screenshot.webp",
+            "type": "image/webp",
+            "sizes": "1919x947",
+            "label": "homepage"
+        }
+    ]
+}

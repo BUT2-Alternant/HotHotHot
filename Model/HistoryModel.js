@@ -1,9 +1,12 @@
 import { HistoryEntity } from "../Entity/HistoryEntity.js";
+import {TemperatureEntity} from "../Entity/TemperatureEntity.js";
+const S_CACHE_NAME = "cache-hothothot";
 
 export class HistoryModel {
   static #O_singleton = null;
 
   #O_historyEntity;
+  #S_CACHE_URL_HISTORY = "history/data";
 
   constructor() {
     if (HistoryModel.#O_singleton === null) {
@@ -14,29 +17,36 @@ export class HistoryModel {
     return HistoryModel.#O_singleton;
   }
 
-  getHistory() {
+  async getHistory() {
+    await this.#loadHistory();
     return this.#O_historyEntity.temperatures;
   }
 
-  addTemperature(O_temperature) {
+  async addTemperature(O_temperature) {
     this.#O_historyEntity.addTemperature(O_temperature);
+    await this.#pushHistoryCache();
   }
 
-  pushHistoryCache() {
-    //TODO: push history cache
+  async #pushHistoryCache() {
+    const cache = await caches.open(S_CACHE_NAME);
+
+    const response = new Response(JSON.stringify(this.#O_historyEntity));
+    await cache.put(this.#S_CACHE_URL_HISTORY, response);
+
+    return response;
   }
 
-  getHistoryCache() {
-    //TODO: get history cache
-  }
+  async #loadHistory() {
+    this.#O_historyEntity.clearValues();
 
-  toString() {
-    const S_string = null;
+    const cache = await caches.open(S_CACHE_NAME);
+    const response = await cache.match(this.#S_CACHE_URL_HISTORY);
 
-    this.#O_historyEntity.temperatures.map((O_temperature) => {
-        S_string += O_temperature.toString();
-    })
-
-    return S_string;
+    if (response) {
+      const data = await response.json();
+      data.map((O_temperature) => {
+        this.#O_historyEntity.addTemperature(new TemperatureEntity(O_temperature.temperature, O_temperature.timestamp, O_temperature.location));
+      });
+    }
   }
 }
