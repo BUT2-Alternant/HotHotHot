@@ -1,0 +1,1 @@
+const S_CACHE_NAME = "cache-hothothot";

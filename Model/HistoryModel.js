@@ -1,6 +1,6 @@
 import { HistoryEntity } from "../Entity/HistoryEntity.js";
 import {TemperatureEntity} from "../Entity/TemperatureEntity.js";
-const S_CACHE_NAME = "cache-hothothot";
+import { S_CACHE_NAME } from "../Constants/CacheConstants.js";
 
 export class HistoryModel {
   static #O_singleton = null;

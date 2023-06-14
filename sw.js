@@ -9,6 +9,7 @@ const O_FILES_PATH = {
   S_ENTITY_FILE_NOTIFICATION_ENTITY_PATH: "./Entity/NotificationEntity.js",
   S_ENTITY_FILE_TEMPERATURE_ENTITY_PATH: "./Entity/TemperatureEntity.js",
   S_MODEL_FILE_HISTORY_MODEL_PATH: "./Model/HistoryModel.js",
+  S_MODEL_FILE_NOTIFICATION_MODEL_PATH: "./Model/NotificationModel.js",
   S_MODEL_FILE_WEB_SOCKET_MODEL_PATH: "./Model/WebSocketModel.js",
   S_OBSERVER_FILE_HISTORY_OBSERVER_PATH: "./Observer/HistoryObserver.js",
   S_OBSERVER_FILE_OBSERVABLE_PATH: "./Observer/Observable.js",
