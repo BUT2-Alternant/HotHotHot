@@ -83,17 +83,8 @@ function recupererTemperature(estLaPremiereRecuperation = false) {
             // Ajout de la température dans l'historique
             historiserTemperature(temperature.getTemperatureActuelle());
 
-            // Envoi d'une notification
-            notifier(temperature.getTemperatureActuelle());
         }
     }
-}
-
-/**
- * Fonction qui permet d'envoyer une notification
- */
-function notifier(temperature) {
-    //TODO
 }
 
 /**

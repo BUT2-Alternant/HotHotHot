@@ -134,4 +134,33 @@ button:hover {
   border: 2px solid red;
 }
 
+#notification {
+  border-radius: 5px;
+  border-style: dashed;
+  margin-top: 10px;
+  margin-right: 10px;
+  padding: 2px 5px;
+  right: 0;
+  top: 0;
+}
+#notification.froid {
+  background-color: #509CFF;
+  color: aliceblue;
+}
+#notification.normal {
+  background-color: #E1E6E1;
+  color: darkslategrey;
+}
+#notification.chaud {
+  background-color: #FFC277;
+  color: #FC3F3F;
+}
+#notification.tres-chaud {
+  background-color: #FC3F3F;
+  color: #FFC277;
+}
+#notification .titre {
+  font-weight: bold;
+}
+
 /*# sourceMappingURL=homepage.css.map */
