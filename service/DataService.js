@@ -39,7 +39,7 @@ export class DataService {
 
     #listenWebSocket() {
         this.#O_websocketModel.onWebSocketMessage((event) => {
-            console.log(event.data);
+            //console.log(event.data);
             const data = TemperatureEntity.fromJSON(JSON.parse(event.data).capteurs[0]);
             const data2 = TemperatureEntity.fromJSON(JSON.parse(event.data).capteurs[1]);
 
@@ -47,7 +47,7 @@ export class DataService {
             this.#O_historyObservable.notify([data,data2]);
         });
         this.#O_websocketModel.onWebSocketClose((event) => {
-            console.log(" END: "+event);
+            //console.log(" END: "+event);
             this.setConnectionStatus(O_CONNECTION_STATUS_CONSTANTS.fetch);
             const O_interval = setInterval(async () => {
                 if (DataService.#B_fetchIsRunning) {

@@ -70,7 +70,7 @@
 
 
 <section id="donnee" aria-disabled="true">
-    <div class="temperature-div">
+    <div class="temperature-div" aria-live = 'polite'>
         <div class="temperature-text">
             <div class="header-temperature">
                 <h2>Température Extérieure </h2>
@@ -90,7 +90,7 @@
         </div>
     </div>
 
-    <div class="temperature-div">
+    <div class="temperature-div" aria-live = 'polite'>
         <div class="temperature-text">
             <div class="header-temperature">
                 <h2>Température Intérieure </h2>
@@ -115,6 +115,18 @@
     <h2></h2>
     <div>
         <canvas id="temperatureChart"></canvas>
+    </div>
+    <div>
+        <div>
+            <h3>Température Intérieur</h3>
+            <p aria-label="Temperature Minimum">Min:<span id="min_temperature_int_span"></span></p>
+            <p aria-label="Temperature Maximum">Max:<span id="max_temperature_int_span"></span></p>
+        </div>
+        <div>
+            <h3>Température Extérieur</h3>
+            <p aria-label="Temperature Minimum">Min:<span id="min_temperature_ext_span"></span></p>
+            <p aria-label="Temperature Maximum">Max:<span id="max_temperature_ext_span"></span></p>
+        </div>
     </div>
 </section>
 

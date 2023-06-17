@@ -30,7 +30,9 @@ export class HistoryModel {
   async #pushHistoryCache() {
     const cache = await caches.open(S_CACHE_NAME);
 
-    const response = new Response(JSON.stringify(this.#O_historyEntity));
+    let json = JSON.stringify(this.#O_historyEntity);
+    console.log(json);
+    const response = new Response(json);
     await cache.put(this.#S_CACHE_URL_HISTORY, response);
 
     return response;
@@ -45,7 +47,8 @@ export class HistoryModel {
     if (response) {
       const data = await response.json();
       data.map((O_temperature) => {
-        this.#O_historyEntity.addTemperature(new TemperatureEntity(O_temperature.temperature, O_temperature.timestamp, O_temperature.location));
+        O_temperature=JSON.parse(O_temperature);
+        this.#O_historyEntity.addTemperature(new TemperatureEntity(O_temperature.temperature, O_temperature.timestamp, O_temperature.temperatureLocation));
       });
     }
   }
