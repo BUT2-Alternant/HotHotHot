@@ -1,4 +1,5 @@
 import {NotificationService} from "../Service/NotificationService.js";
+import {HistoryController} from "./HistoryController.js";
 
 const service = new NotificationService();
 service.listenRealtimeTemperature(notifier);
@@ -6,7 +7,9 @@ service.listenRealtimeTemperature(notifier);
  * Fonction qui permet d'envoyer une notification
  */
 function notifier(temperatures) {
-    console.log(temperatures.data)
+    let O_historyController = new HistoryController();
+    console.log(O_historyController.#O_historyService.getHistoryTemperature());
+    console.log(JSON.parse(temperatures.data));
     if (document.getElementById('notification') == null ){
         let notification_div = document.createElement('div');
         notification_div.setAttribute('id','notification');
