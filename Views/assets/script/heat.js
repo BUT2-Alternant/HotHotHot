@@ -3,6 +3,8 @@ import {RealtimeController} from "../../../Controller/RealTimeController.js";
 import RecommandationsManager from "./recommendation.js";
 import {HistoryController} from "../../../Controller/HistoryController.js";
 import {O_TEMPERATURE_LOCATION} from "../../../Constants/TemperatureConstants.js";
+import {DataService} from "../../../Service/DataService.js";
+import {O_CONNECTION_STATUS_CONSTANTS} from "../../../Constants/ConnectionConstants.js";
 
 let currentTab = "";
 localStorage.setItem("ongletCourant", currentTab);
@@ -58,6 +60,26 @@ realtimecontroller.getTemperature(function (data) {
     temperatureInside.style.height = (value2 - config.minTemp) / (config.maxTemp - config.minTemp) * 100 + "%";
     temperatureInside.dataset.value = value2 + "°C";
 });
+
+let dataService = new DataService();
+if (dataService.getConnectionStatus() === O_CONNECTION_STATUS_CONSTANTS.offline) {
+    document.getElementById("bouton-donnee").style.display = "none";
+    let ongletDonnee = document.getElementById('donnee');
+    let boutonDonnee = document.getElementById('bouton-donnee');
+
+    let ongletHistorique = document.getElementById('historique');
+    let boutonHistorique = document.getElementById('bouton-historique');
+    afficherDonnee();
+    // ongletDonnee.style.display = "none"
+    // ongletDonnee.ariaDisabled = "true"
+    // boutonDonnee.style.backgroundColor = "#D3E0EF"
+    //
+    // ongletHistorique.style.display = "block"
+    // ongletHistorique.ariaDisabled = "false"
+    // boutonHistorique.style.backgroundColor = "#97B2EC"
+    //
+    // localStorage.setItem("ongletCourant", "history");
+}
 
 function updateMinMax(){
     const minInt = document.getElementById("min_temperature_int_span");
