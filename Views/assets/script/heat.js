@@ -15,7 +15,7 @@ let realtimecontroller = new RealtimeController();
 let historycontroller = new HistoryController();
 
 historycontroller.listenHistory();
-;
+
 function messageWaitData(idSection) {
     let display = document.getElementById(idSection);
     let loadingDisplay = document.getElementById('chargement');
@@ -57,7 +57,7 @@ realtimecontroller.getTemperature(function (data) {
     temperatureOutside.style.height = (value - config.minTemp) / (config.maxTemp - config.minTemp) * 100 + "%";
     temperatureOutside.dataset.value = value + "°C";
     donneeChargee = true;
-    localStorage.setItem("temperature", value);
+    localStorage.setItem("donneeChargee", value);
 
     RecommandationsManager.afficherRecommandations(value);
     messageWaitData("donnee");
