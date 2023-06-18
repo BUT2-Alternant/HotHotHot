@@ -19,4 +19,11 @@ export class NotificationEntity {
         const O_date = new Date(this.#I_timestamp * 1000);
         return O_date.toLocaleDateString() + " " + O_date.toLocaleTimeString();
     }
+
+    toJSON() {
+        return {
+            message: this.#S_message,
+            timestamp: this.#I_timestamp
+        };
+      }
 }
