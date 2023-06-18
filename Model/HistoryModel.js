@@ -31,7 +31,6 @@ export class HistoryModel {
     const cache = await caches.open(S_CACHE_NAME);
 
     let json = JSON.stringify(this.#O_historyEntity);
-    console.log(json);
     const response = new Response(json);
     await cache.put(this.#S_CACHE_URL_HISTORY, response);
 

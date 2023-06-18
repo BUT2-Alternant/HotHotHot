@@ -1,11 +1,12 @@
 import {RealtimeService} from "../../../Service/RealtimeService.js";
-import {FetchService} from "../../../Service/FetchService.js";
 import {RealtimeController} from "../../../Controller/RealTimeController.js";
 import RecommandationsManager from "./recommendation.js";
 import {HistoryController} from "../../../Controller/HistoryController.js";
 
 let donneeChargee = false;
+let currentTab = "";
 localStorage.setItem("donneeChargee", donneeChargee);
+localStorage.setItem("ongletCourant", currentTab);
 
 let minTemp=[99,99];
 let maxTemp=[0,0];
@@ -14,12 +15,12 @@ let realtimecontroller = new RealtimeController();
 let historycontroller = new HistoryController();
 
 historycontroller.listenHistory();
-
+;
 function messageWaitData(idSection) {
     let display = document.getElementById(idSection);
     let loadingDisplay = document.getElementById('chargement');
 
-    if (loadingDisplay.style.display !== "none") {
+    if (loadingDisplay.style.display !== "none" && localStorage.getItem("ongletCourant")===idSection) {
         display.style.display = "block";
         display.ariaDisabled = "false";
 
@@ -47,8 +48,6 @@ const fieldOutside = document.getElementById("fieldOutside");
 const fieldInside = document.getElementById("fieldInside");
 
 
-let fecthtime = new FetchService();
-
 realtimecontroller.getTemperature(function (data) {
     const tempExt = data[0];
     const tempOut = data[1];
@@ -68,25 +67,6 @@ realtimecontroller.getTemperature(function (data) {
     temperatureInside.style.height = (value2 - config.minTemp) / (config.maxTemp - config.minTemp) * 100 + "%";
     temperatureInside.dataset.value = value2 + "°C";
 });
-
-/*fecthtime.installListenerFetchOutside(function (a) {
-    const value = a.temperature;
-    fieldOutside.innerText = value + "°C";
-    temperatureOutside.style.height = (value - config.minTemp) / (config.maxTemp - config.minTemp) * 100 + "%";
-    temperatureOutside.dataset.value = value + "°C";
-    donneeChargee = true;
-    localStorage.setItem("temperature", value);
-
-    RecommandationsManager.afficherRecommandations(value);
-    messageWaitData("donnee");
-});
-
-fecthtime.installListenerFetchInside(function (a) {
-    const value = a.temperature;
-    fieldInside.innerText = value + "°C";
-    temperatureInside.style.height = (value - config.minTemp) / (config.maxTemp - config.minTemp) * 100 + "%";
-    temperatureInside.dataset.value = value + "°C";
-});*/
 
 function updateMinMax(){
     const minInt = document.getElementById("min_temperature_int_span");
@@ -110,7 +90,7 @@ async function plotGraph() {
 
     // 20 dernières
     for(let i=0; i<lastElement.length; i++){
-        if(lastElement[i].temperatureLocation===0){
+        if(lastElement[i].temperatureLocation===1){
             lastOutside.push(lastElement[i]);
         }else{
             lastInside.push(lastElement[i]);

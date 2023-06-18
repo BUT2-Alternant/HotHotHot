@@ -21,6 +21,7 @@ function changerOnglet(event) {
             ongletHistorique.ariaDisabled = "true"
             boutonHistorique.style.backgroundColor = "#D3E0EF"
 
+            localStorage.setItem("ongletCourant", "data");
         } else {
             ongletDonnee.style.display = "none"
             ongletDonnee.ariaDisabled = "true"
@@ -29,6 +30,8 @@ function changerOnglet(event) {
             ongletHistorique.style.display = "block"
             ongletHistorique.ariaDisabled = "false"
             boutonHistorique.style.backgroundColor = "#97B2EC"
+
+            localStorage.setItem("ongletCourant", "history");
         }
     } else {
         alert("Les données ne sont pas encore chargées, veuillez patienter");
