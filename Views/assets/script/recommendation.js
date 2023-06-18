@@ -1,5 +1,7 @@
 class RecommandationsManager {
     static afficherRecommandations(temp) {
+        temp = Math.round(temp);
+
         let recommendationsSidebar = document.getElementById("recommendations-sidebar");
 
         if (recommendationsSidebar.style.display === "none")
