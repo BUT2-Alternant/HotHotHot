@@ -125,7 +125,9 @@ table[role="table"][aria-labelledby="difficulties-heading"] {
   height: 32px;
 }
 
-h1#page-title {
-  margin-top: 1.5em;
+header{
+  h1{
+    color: variable.$black;
+  }
 }
 

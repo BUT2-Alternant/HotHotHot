@@ -76,6 +76,37 @@ img {
   text-decoration: none;
 }
 
+#icon {
+  width: 4em;
+  height: 4em;
+  margin-right: 1em;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+button {
+  width: 23rem;
+  height: 2rem;
+  background-color: #D3E0EF;
+  border: none;
+  border-radius: 8px;
+}
+
+button:hover {
+  background-color: #97B2EC;
+  cursor: pointer;
+}
+
+h1 {
+  font-family: math;
+  font-size: 26px;
+}
+
 body {
   font-family: Arial, sans-serif;
   color: #130E0D;
@@ -186,8 +217,8 @@ table[role=table][aria-labelledby=difficulties-heading] td:last-child {
   height: 32px;
 }
 
-h1#page-title {
-  margin-top: 1.5em;
+header h1 {
+  color: #130E0D;
 }
 
 /*# sourceMappingURL=documentation.css.map */

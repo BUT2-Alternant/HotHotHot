@@ -18,6 +18,7 @@ header {
   justify-content: center;
   align-items: center;
   margin-bottom: 1rem;
+  margin-top: 20px;
 }
 
 h1 {
@@ -67,19 +68,6 @@ li {
   width: 60%;
   margin-left: 20%;
   border-radius: 8px;
-}
-
-button {
-  width: 23rem;
-  height: 2rem;
-  background-color: variable.$global_modal_background;
-  border: none;
-  border-radius: 8px;
-}
-
-button:hover {
-  background-color: variable.$global_modal_background_hover;
-  cursor: pointer;
 }
 
 #outfit-icons {
