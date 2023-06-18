@@ -1,0 +1,193 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: math;
+}
+
+.icon-sidebar {
+  width: 32px;
+}
+
+.icons-sidebar {
+  width: 25px;
+  vertical-align: bottom;
+}
+
+button#sidebar-toggle {
+  width: fit-content;
+  float: left;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+button#sidebar-toggle {
+  transition: left 0.3s ease-in-out;
+  z-index: 1;
+}
+
+#sidebar {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 15rem;
+  height: 100%;
+  background-color: aliceblue;
+  color: black;
+  transition: left 0.3s ease-in-out;
+}
+#sidebar .sidebar-bot {
+  bottom: 1rem;
+  position: absolute;
+}
+
+#sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+h3 {
+  text-align: center;
+  margin-top: 1em;
+}
+
+#sidebar ul li {
+  padding: 10px 10px 10px 20px;
+}
+
+.sidebar-bot li {
+  padding: 10px 10px 0 10px !important;
+  margin: 0;
+}
+
+#sidebar.open {
+  transition: left 0.3s ease-in-out;
+}
+
+img {
+  width: 2rem;
+  padding: 4px;
+}
+
+#sidebar ul li a {
+  color: black;
+  text-decoration: none;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #130E0D;
+  margin: 20px;
+}
+
+h1 {
+  color: #509CFF;
+}
+
+h2 {
+  color: #509CFF;
+  margin-top: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+table th,
+table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #130E0D;
+}
+
+a {
+  color: #509CFF;
+  text-decoration: none;
+}
+
+.team {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 10px;
+}
+.team span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 40px;
+}
+.team span img {
+  width: 120px;
+  height: 110px;
+}
+.team span:last-child {
+  margin-right: 0;
+}
+
+ul[role=list][aria-labelledby=roles-heading] {
+  margin-top: 5px;
+  padding-left: 20px;
+}
+ul[role=list][aria-labelledby=roles-heading] li {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+ul[role=list][aria-labelledby=roles-heading] li:before {
+  content: "•";
+  color: #509CFF;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+ul[role=list][aria-labelledby=tools-heading] {
+  margin-top: 5px;
+  padding-left: 20px;
+}
+
+table[role=table][aria-labelledby=planning-heading],
+table[role=table][aria-labelledby=difficulties-heading] {
+  margin-top: 5px;
+}
+table[role=table][aria-labelledby=planning-heading] th,
+table[role=table][aria-labelledby=difficulties-heading] th {
+  background-color: #509CFF;
+  color: #ffffff;
+  font-weight: bold;
+}
+table[role=table][aria-labelledby=planning-heading] td,
+table[role=table][aria-labelledby=difficulties-heading] td {
+  background-color: #f5f5f5;
+}
+table[role=table][aria-labelledby=planning-heading] th:first-child,
+table[role=table][aria-labelledby=planning-heading] td:first-child,
+table[role=table][aria-labelledby=difficulties-heading] th:first-child,
+table[role=table][aria-labelledby=difficulties-heading] td:first-child {
+  padding-left: 0;
+}
+table[role=table][aria-labelledby=planning-heading] th:last-child,
+table[role=table][aria-labelledby=planning-heading] td:last-child,
+table[role=table][aria-labelledby=difficulties-heading] th:last-child,
+table[role=table][aria-labelledby=difficulties-heading] td:last-child {
+  padding-right: 0;
+}
+
+#sidebar-toggle {
+  height: 32px;
+}
+
+h1#page-title {
+  margin-top: 1.5em;
+}
+
+/*# sourceMappingURL=documentation.css.map */

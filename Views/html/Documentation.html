@@ -3,9 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <title>Documentation</title>
+  <link rel="icon" href="../assets/images/icon.png" type="image/x-icon"/>
   <link rel="stylesheet" href="../assets/style/documentation.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
+
+<button id="sidebar-toggle"><i class='fa fa-bars icon-sidebar' aria-hidden='true'></i></button>
+<br>
+
+<nav id="sidebar" style="left: -16em">
+  <h3 role="heading" >Météo actuelle</h3>
+  <ul>
+    <li><a href="homepage.html"><img src="../assets/images/house2.png" class="icons-sidebar" alt="Accueil"> Accueil</a></li>
+    <li><a href="Documentation.html"><img src="../assets/images/documentation.png" class="icons-sidebar" alt="Documentation"> Documentation</a></li>
+    <li><a href="https://github.com/BUT2-Alternant/HotHotHot"><img src="../assets/images/github-sign.png" class="icons-sidebar" alt="Documentation"> Notre GitHub</a></li>
+
+  </ul>
+
+  <ul class="sidebar-bot">
+    <li><b>Crédits :</b></li>
+    <li><a href="https://www.flaticon.com/authors/freepik" title="thermomètre icônes">Freepik</a></li>
+    <li><a href="https://www.flaticon.com/authors/rizky-maulidhani" title="écharpe icônes">rizky maulidhani</a></li>
+    <li><a href="https://www.flaticon.com/authors/superarticons" title="veste icônes">Superarticons</a></li>
+    <li><a href="https://www.flaticon.com/authors/creativenoys01" title="hiver icônes">Creativenoys01</a></li>
+    <li><a href="https://www.flaticon.com/authors/victoruler" title="veste icônes">Victoruler</a></li>
+    <li><a href="https://www.flaticon.com/authors/juicy-fish" title="t-shirt icônes">juicy_fish</a></li>
+    <li><a href="https://www.flaticon.com/authors/monkik" title="pantalon icônes">monkik</a></li>
+    <li><a href="https://www.flaticon.com/authors/good-ware" title="hydratant icônes">Good Ware</a></li>
+    <li><a href="https://www.flaticon.com/authors/juicy-fish" title="short en jean icônes">juicy_fish</a></li>
+  </ul>
+</nav>
+
   <h1 id="page-title">Documentation</h1>
 
   <h2 id="page-title">Présentation de l'équipe et du rôle de chacun</h2>
@@ -58,7 +88,7 @@
       Mélanie HUGUES : Développeuse et Designer du projet, création de la page Documentation.
     </li>
     <li>
-      Thibaut LAHAIE : Développeur Designer du projet, création de la page d'accueil, Ajout d'un système d'onglet (Données, Historique), ajout d'une barre de navigation, ajout d'icones variées avec les mentions d'auteurs dans la sidebar, Ajout d'un affichage permettant de connaître une tenue recommandée en fonction de la température extérieure actuelle, création de variables SCSS contenant les couleurs définies de la charte graphique, ajout d'animation lors de l'apparition de la tenue recommandée et lors de l'ouverture/fermeture de la sidebar
+      Thibaut LAHAIE : Développeur Designer du projet, création de la page d'accueil, ajout d'un système d'onglet (Données, Historique), ajout d'une barre de navigation, ajout d'icones variées avec les mentions d'auteurs dans la sidebar, Ajout d'un affichage permettant de connaître une tenue recommandée en fonction de la température extérieure actuelle, création de variables SCSS contenant les couleurs définies de la charte graphique, ajout d'animation lors de l'apparition de la tenue recommandée et lors de l'ouverture/fermeture de la sidebar, ajout de la sidebar et des variables de couleurs sur la page Documentation.
     </li>
     <li>
       Guillaume KUSIAK : Développeur du projet, Architecture du Back, History model, notificationModel et toute la mise en cache et gestion mode hors-ligne avec PWA.
@@ -156,4 +186,5 @@
     </tr>
   </table>
 </body>
+<script src="../assets/script/sidebarController.js"></script>
 </html>
