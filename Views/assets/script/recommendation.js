@@ -9,7 +9,8 @@ class RecommandationsManager {
 
         let outfitIconsDiv = document.getElementById("outfit-icons");
 
-        outfitIconsDiv.innerHTML = "";
+        let previousRecommendation = outfitIconsDiv.dataset.recommendation;
+        let newRecommendation = "";
 
         let recommendations = [
             {
@@ -52,28 +53,36 @@ class RecommandationsManager {
                 ]
             }
         ];
+
         let nearestRecommendation = recommendations.reduce(function (prev, curr) {
             return Math.abs(curr.temperature - temp) < Math.abs(prev.temperature - temp) ? curr : prev;
         });
 
         if (nearestRecommendation) {
-            nearestRecommendation.items.forEach(function (item) {
-                let outfitIcon = document.createElement("div");
-                outfitIcon.classList.add("outfit-icon");
-                outfitIcon.innerHTML = "<img src='" + item.image + "' class='cloth' alt=''/>";
+            newRecommendation = JSON.stringify(nearestRecommendation);
+            if (newRecommendation !== previousRecommendation) {
+                outfitIconsDiv.innerHTML = "";
 
-                let outfitText = document.createElement("div");
-                outfitText.classList.add("outfit-text");
-                outfitText.textContent = item.text;
+                nearestRecommendation.items.forEach(function (item) {
+                    let outfitIcon = document.createElement("div");
+                    outfitIcon.classList.add("outfit-icon");
+                    outfitIcon.innerHTML = "<img src='" + item.image + "' class='cloth' alt=''/>";
 
-                outfitIconsDiv.appendChild(outfitIcon);
-                outfitIconsDiv.appendChild(outfitText);
-            });
+                    let outfitText = document.createElement("div");
+                    outfitText.classList.add("outfit-text");
+                    outfitText.textContent = item.text;
 
-            outfitIconsDiv.style.display = "none";
-            setTimeout(function () {
-                outfitIconsDiv.style.display = "flex";
-            }, 100);
+                    outfitIconsDiv.appendChild(outfitIcon);
+                    outfitIconsDiv.appendChild(outfitText);
+                });
+
+                outfitIconsDiv.dataset.recommendation = newRecommendation;
+
+                outfitIconsDiv.style.display = "none";
+                setTimeout(function () {
+                    outfitIconsDiv.style.display = "flex";
+                }, 100);
+            }
         }
     }
 }

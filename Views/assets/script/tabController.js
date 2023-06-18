@@ -1,4 +1,5 @@
 let donneeChargee = false;
+let isFirstLoad = true;
 
 /**
  * Fonction qui permet de changer le contenu affiché a l'écran en fonction de l'onglet cliqué
@@ -42,26 +43,29 @@ function changerOnglet(event) {
  * Fonction permetant de rendre visible la partie donnée et de cacher la partie historique et chargement des données
  */
 function afficherDonnee() {
-    donneeChargee = true;
+    if (isFirstLoad) {
+        isFirstLoad = false;
+        donneeChargee = true;
 
-    let chargement = document.getElementById('chargement');
+        let chargement = document.getElementById('chargement');
 
-    let ongletDonnee = document.getElementById('donnee');
-    let boutonDonnee = document.getElementById('bouton-donnee');
+        let ongletDonnee = document.getElementById('donnee');
+        let boutonDonnee = document.getElementById('bouton-donnee');
 
-    let ongletHistorique = document.getElementById('historique');
-    let boutonHistorique = document.getElementById('bouton-historique');
+        let ongletHistorique = document.getElementById('historique');
+        let boutonHistorique = document.getElementById('bouton-historique');
 
-    ongletDonnee.style.display = "block";
-    ongletDonnee.ariaDisabled = "false";
-    boutonDonnee.style.backgroundColor = "#97B2EC";
+        ongletDonnee.style.display = "block";
+        ongletDonnee.ariaDisabled = "false";
+        boutonDonnee.style.backgroundColor = "#97B2EC";
 
-    ongletHistorique.style.display = "none";
-    ongletHistorique.ariaDisabled = "true";
-    boutonHistorique.style.backgroundColor = "#D3E0EF";
+        ongletHistorique.style.display = "none";
+        ongletHistorique.ariaDisabled = "true";
+        boutonHistorique.style.backgroundColor = "#D3E0EF";
 
-    chargement.style.display = "none";
-    chargement.ariaDisabled = "true";
+        chargement.style.display = "none";
+        chargement.ariaDisabled = "true";
 
-    localStorage.setItem("ongletCourant", "data");
+        localStorage.setItem("ongletCourant", "data");
+    }
 }
