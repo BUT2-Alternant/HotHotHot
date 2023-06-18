@@ -1,3 +1,5 @@
+import {HistoryService} from "../Service/HistoryService.js";
+
 export class HistoryController {
     #O_historyService;
     constructor() {
@@ -5,8 +7,10 @@ export class HistoryController {
     }
 
     listenHistory() {
-        this.#O_historyService.listenHistoryTemperature(history => {
-            // TODO : update view with the history of temperature
-        });
+        this.#O_historyService.listenHistoryTemperature();
+    }
+
+    async getHistoryTemperature(){
+        return await this.#O_historyService.getHistoryTemperature();
     }
 }

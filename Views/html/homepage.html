@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Hot Hot Hot</title>
+    <link rel="stylesheet" href="../assets/style/temp.css"/>
     <link rel="icon" href="../assets/images/icon.png" type="image/x-icon"/>
     <link rel="stylesheet" href="../assets/style/homepage.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+
     <!-- manifest PWA -->
     <link rel="manifest" href="../../manifest.json">
     <script>
@@ -22,17 +23,28 @@
 <body>
 
 <!-- Code commun a chacune des pages -->
-<button id="sidebar-toggle"><img src="../assets/images/icon_menu.png" alt=""></button>
+<button id="sidebar-toggle"><i class='fa fa-bars icon-sidebar' aria-hidden='true'></i></button>
 
-<nav id="sidebar" style="left: -200px">
+<nav id="sidebar" style="left: -16em">
+    <h3 role="heading" >Météo actuelle</h3>
     <ul>
-        <li><a href="homepage.html"><i class="fa fa-home" aria-hidden="true"></i> Accueil</a></li>
-        <li><a href="Documentation.html"><i class="fa fa-file-text" aria-hidden="true"></i> Documentation</a></li>
+        <li><a href="homepage.html"><img src="../assets/images/house2.png" class="icons-sidebar" alt="Accueil"> Accueil</a></li>
+        <li><a href="Documentation.html"><img src="../assets/images/documentation.png" class="icons-sidebar" alt="Documentation"> Documentation</a></li>
+        <li><a href="https://github.com/BUT2-Alternant/HotHotHot"><img src="../assets/images/github-sign.png" class="icons-sidebar" alt="Documentation"> Notre GitHub</a></li>
+
     </ul>
 
     <ul class="sidebar-bot">
-        <li><a href="https://github.com/BUT2-Alternant/HotHotHot"><i class="fa fa-github" aria-hidden="true"></i> GitHub</a></li>
-        <li><a href="Documentation.html">//A COMPLETER</a></li>
+        <li><b>Crédits :</b></li>
+        <li><a href="https://www.flaticon.com/authors/freepik" title="thermomètre icônes">Freepik</a></li>
+        <li><a href="https://www.flaticon.com/authors/rizky-maulidhani" title="écharpe icônes">rizky maulidhani</a></li>
+        <li><a href="https://www.flaticon.com/authors/superarticons" title="veste icônes">Superarticons</a></li>
+        <li><a href="https://www.flaticon.com/authors/creativenoys01" title="hiver icônes">Creativenoys01</a></li>
+        <li><a href="https://www.flaticon.com/authors/victoruler" title="veste icônes">Victoruler</a></li>
+        <li><a href="https://www.flaticon.com/authors/juicy-fish" title="t-shirt icônes">juicy_fish</a></li>
+        <li><a href="https://www.flaticon.com/authors/monkik" title="pantalon icônes">monkik</a></li>
+        <li><a href="https://www.flaticon.com/authors/good-ware" title="hydratant icônes">Good Ware</a></li>
+        <li><a href="https://www.flaticon.com/authors/juicy-fish" title="short en jean icônes">juicy_fish</a></li>
     </ul>
 </nav>
 <!-- fin du code commun a chacune des pages -->
@@ -43,20 +55,79 @@
 </header>
 
 <nav id="selecteur">
-    <button role="button" aria-label="Afficher les données actuelles" onclick="changerOnglet(event)" id="bouton-donnee"><b>Données</b></button>
-    <button role="button" aria-label="Afficher l'historique" onclick="changerOnglet(event)" id="bouton-historique"><b>Historique</b></button>
+    <button role="button" aria-label="Afficher les données actuelles" onclick="changerOnglet(event)" id="bouton-donnee">
+        <div class="onglet-style"><b>Données</b><img src="../assets/images/hot.png" alt="thermometer"></div>
+    </button>
+    <button role="button" aria-label="Afficher l'historique" onclick="changerOnglet(event)" id="bouton-historique">
+        <div class="onglet-style"><b>Historique</b><img src="../assets/images/bar-graph.png" alt="bar graph"></div>
+    </button>
 </nav>
 
-<section id="donnee" aria-disabled="true">
-    <p id="message" role="alert" aria-live = 'polite'></p>
-    <p id="affichage-temperature">
-        <span>Température actuelle : </span>
-        <span id="temperature" role="alert" aria-live = 'polite'></span>
-    </p>
+<div id="recommendations-sidebar" style="display: none">
+    <b>Recommandation </b>
+    <div id="outfit-icons"></div>
+</div>
+
+
+<section id="donnee" aria-disabled="true" style="display: none">
+    <div class="temperature-div" aria-live = 'polite'>
+        <div class="temperature-text">
+            <div class="header-temperature">
+                <h2>Température Extérieure </h2>
+                <img src="../assets/images/garden.png" alt="Garden">
+            </div>
+            <br>
+            <p>Température obtenue depuis un capteur situé sur le rebord d'une fenêtre, à l'éxtérieur.</p>
+            <br>
+            <div id="fieldOutside">
+            </div>
+        </div>
+        <div>
+            <div class="termometer">
+                <div class="temperature" id="temperatureOutside" style="height:0" data-value="0°C"></div>
+                <div class="graduations"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="temperature-div" aria-live = 'polite'>
+        <div class="temperature-text">
+            <div class="header-temperature">
+                <h2>Température Intérieure </h2>
+                <img src="../assets/images/house.png" alt="House">
+            </div>
+            <br>
+            <p>Température obtenue depuis un capteur situé à l'intérieur d'une maison.</p>
+            <br>
+            <div id="fieldInside">
+            </div>
+        </div>
+        <div>
+            <div class="termometer">
+                <div class="temperature" id="temperatureInside" style="height:0" data-value="0°C"></div>
+                <div class="graduations"></div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<section id="historique" aria-disabled="true">
-    <ul id="liste-temperature"></ul>
+<section id="historique" aria-disabled="true" style="display: none">
+    <h2></h2>
+    <div>
+        <canvas id="temperatureChart"></canvas>
+    </div>
+    <div>
+        <div>
+            <h3>Température Intérieure</h3>
+            <p aria-label="Temperature Minimum">Min:<span id="min_temperature_int_span"></span></p>
+            <p aria-label="Temperature Maximum">Max:<span id="max_temperature_int_span"></span></p>
+        </div>
+        <div>
+            <h3>Température Extérieure</h3>
+            <p aria-label="Temperature Minimum">Min:<span id="min_temperature_ext_span"></span></p>
+            <p aria-label="Temperature Maximum">Max:<span id="max_temperature_ext_span"></span></p>
+        </div>
+    </div>
 </section>
 
 <section id="chargement" aria-disabled="false">
@@ -65,8 +136,11 @@
 
 <button class="add-button">Installer</button>
 
-<script src="../assets/script/script.js" ></script>
+<script src="../assets/script/sidebarController.js"></script>
 <script src="../assets/script/tabController.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script type="module" src="../assets/script/heat.js"></script>
+
 </body>
 </html>
 

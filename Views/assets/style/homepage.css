@@ -2,6 +2,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: math;
+}
+
+.icon-sidebar {
+  width: 32px;
+}
+
+.icons-sidebar {
+  width: 25px;
+  vertical-align: bottom;
 }
 
 button#sidebar-toggle {
@@ -12,17 +22,23 @@ button#sidebar-toggle {
   left: 1rem;
 }
 
+button#sidebar-toggle {
+  transition: left 0.3s ease-in-out;
+  z-index: 1;
+}
+
 #sidebar {
   position: fixed;
+  z-index: 1;
   top: 0;
-  width: 9rem;
+  width: 15rem;
   height: 100%;
-  background-color: rgba(225, 230, 225, 0.7);
+  background-color: aliceblue;
   color: black;
   transition: left 0.3s ease-in-out;
 }
 #sidebar .sidebar-bot {
-  bottom: 0;
+  bottom: 1rem;
   position: absolute;
 }
 
@@ -31,8 +47,22 @@ button#sidebar-toggle {
   padding: 0;
 }
 
+h3 {
+  text-align: center;
+  margin-top: 1em;
+}
+
 #sidebar ul li {
-  padding: 10px;
+  padding: 10px 10px 10px 20px;
+}
+
+.sidebar-bot li {
+  padding: 10px 10px 0 10px !important;
+  margin: 0;
+}
+
+#sidebar.open {
+  transition: left 0.3s ease-in-out;
 }
 
 img {
@@ -79,6 +109,18 @@ h1 {
   margin-top: 1rem;
 }
 
+.header-temperature {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.onglet-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #historique, #donnee {
   display: none;
 }
@@ -103,14 +145,70 @@ li {
 button {
   width: 23rem;
   height: 2rem;
-  background-color: lightskyblue;
+  background-color: #D3E0EF;
   border: none;
   border-radius: 8px;
 }
 
 button:hover {
-  background-color: powderblue;
+  background-color: #97B2EC;
   cursor: pointer;
+}
+
+#outfit-icons {
+  display: flex;
+  align-items: center;
+}
+
+#outfit-icons {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  animation: fade-in 0.5s ease-in-out forwards;
+  justify-content: space-evenly;
+}
+
+.outfit-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.outfit-icon i {
+  font-size: 48px;
+}
+
+.outfit-text {
+  margin-top: 10px;
+  text-align: center;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#recommendations-sidebar {
+  width: 205px;
+  height: 85%;
+  position: fixed;
+  left: 1rem;
+  top: 5rem;
+  background-color: aliceblue;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.cloth {
+  width: 4em;
+  padding: 0;
+  margin: 0;
 }
 
 #message {
@@ -118,7 +216,7 @@ button:hover {
   margin-top: 1rem;
 }
 
-.froid {
+.cold {
   border: 2px solid blue;
 }
 
@@ -132,6 +230,11 @@ button:hover {
 
 .tres-chaud {
   border: 2px solid red;
+}
+
+button.add-button {
+  top: 1em;
+  position: relative;
 }
 
 /*# sourceMappingURL=homepage.css.map */
