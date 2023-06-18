@@ -80,7 +80,6 @@ function updateMinMax(){
 
 async function plotGraph() {
     const temps = Array.from(await historycontroller.getHistoryTemperature());
-    console.log(temps);
     const lastElement = temps.slice(-40);
     let lastOutside=[];
     let lastInside=[];

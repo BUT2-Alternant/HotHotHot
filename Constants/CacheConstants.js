@@ -1,1 +1,1 @@
-const S_CACHE_NAME = "cache-hothothot";
+export const S_CACHE_NAME = "cache-hothothot";
