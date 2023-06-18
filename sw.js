@@ -22,6 +22,8 @@ const O_FILES_PATH = {
   S_VIEW_FILE_DOCUMENTATION_PATH: "./Views/html/Documentation.html",
   S_VIEW_FILE_HOMEPAGE_CSS_PATH: "./Views/assets/style/homepage.css",
   S_VIEW_FILE_HOMEPAGE_SCSS_PATH: "./Views/assets/style/homepage.scss",
+  S_VIEW_FILE_DOCUMENTATION_CSS_PATH: "./Views/assets/style/documentation.css",
+  S_VIEW_FILE_DOCUMENTATION_SCSS_PATH: "./Views/assets/style/documentation.scss",
   S_VIEW_FILE_MAIN_SCSS_PATH: "./Views/assets/style/main.scss",
   S_VIEW_FILE_VARIABLE_CSS_PATH: "./Views/assets/style/variable.css",
   S_VIEW_FILE_VARIABLE_SCSS_PATH: "./Views/assets/style/variable.scss",
