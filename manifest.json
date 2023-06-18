@@ -9,14 +9,14 @@
     "display": "standalone",
     "icons": [
         {
-            "src": "Views/assets/images/icon.png",
+            "src": "./Views/assets/images/icon.png",
             "type": "image/png",
             "sizes": "512x512"
         }
     ],
     "screenshots": [
         {
-            "src": "Views/assets/images/manifest/screenshot.webp",
+            "src": "./Views/assets/images/manifest/screenshot.webp",
             "type": "image/webp",
             "sizes": "1919x947",
             "label": "homepage"

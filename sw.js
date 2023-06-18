@@ -65,9 +65,10 @@ const O_FILES_PATH = {
   S_VIEW_FILE_MAIN_SCSS_PATH: "./Views/assets/style/main.scss",
   S_VIEW_FILE_VARIABLE_CSS_PATH: "./Views/assets/style/variable.css",
   S_VIEW_FILE_VARIABLE_SCSS_PATH: "./Views/assets/style/variable.scss",
-  S_VIEW_FILE_TAB_CONTROLLER_JS_PATH: "./Views/assets/script/tabController.js",
-  S_VIEW_FILE_ICON_PATH: "./Views/assets/images/icon.png",
-  S_VIEW_FILE_ICON_MENU_PATH: "./Views/assets/images/icon_menu.png",
+
+  S_VIEW_FILE_HOMEPAGE_PATH: "./Views/html/homepage.html",
+  S_VIEW_FILE_DOCUMENTATION_PATH: "./Views/html/Documentation.html",
+
   S_VIEW_FILE_MANIFEST_PATH: "./manifest.json",
 };
 
@@ -95,7 +96,7 @@ const getFromCaches = async (cache, request) => {
 self.addEventListener("install", (event) => {
   event.waitUntil(
     cacheAddAll(
-      ...Object.values(O_FILES_PATH),
+      ...Object.values(O_FILES_PATH), "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"
     )
   );
 });
