@@ -3,6 +3,7 @@ const S_CACHE_NAME = "cache-hothothot";
 const O_FILES_PATH = {
   S_CONSTANTS_FILE_CONNECTION_CONSTANTS_PATH: "./Constants/ConnectionConstants.js",
   S_CONSTANTS_FILE_TEMPERATURE_CONSTANTS_PATH: "./Constants/TemperatureConstants.js",
+  S_CONSTATNS_FILE_CACHE_CONSTANTS_PATH: "./Constants/CacheConstants.js",
   S_CONTROLLER_FILE_HISTORY_CONTROLLER_PATH: "./Controller/HistoryController.js",
   S_CONTROLLER_FILE_REALTIME_CONTROLLER_PATH: "./Controller/RealtimeController.js",
   S_ENTITY_FILE_HISTORY_ENTITY_PATH: "./Entity/HistoryEntity.js",
