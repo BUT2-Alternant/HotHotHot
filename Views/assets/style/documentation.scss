@@ -1,14 +1,6 @@
 @use "main";
-// Déclaration des variables de couleur
-$black: #130E0D;
-$blue-cold: #509CFF;
-$red-hot: #FC3F3F;
-$platinum-neutral: #E1E6E1;
-$yellow-sun: #FFC277;
+@use "variable";
 
-$global_modal_background: #D3E0EF;
-$global_modal_background_hover: #97B2EC;
-$global_section_background: aliceblue;
 $team-member-spacing: 40px; // Espacement entre les membres de l'équipe
 $team-member-image-width: 120px; // Largeur de l'image du membre de l'équipe
 $team-member-image-height: 110px; // Hauteur de l'image du membre de l'équipe
@@ -16,16 +8,16 @@ $team-member-image-height: 110px; // Hauteur de l'image du membre de l'équipe
 // Styles généraux
 body {
   font-family: Arial, sans-serif;
-  color: $black;
+  color: variable.$black;
   margin: 20px;
 }
 
 h1 {
-  color: $blue-cold;
+  color: variable.$blue-cold;
 }
 
 h2 {
-  color: $blue-cold;
+  color: variable.$blue-cold;
   margin-top: 20px;
 }
 
@@ -44,12 +36,12 @@ table {
   td {
     padding: 8px;
     text-align: left;
-    border-bottom: 1px solid $black;
+    border-bottom: 1px solid variable.$black;
   }
 }
 
 a {
-  color: $blue-cold;
+  color: variable.$blue-cold;
   text-decoration: none;
 }
 
@@ -89,7 +81,7 @@ ul[role="list"][aria-labelledby="roles-heading"] {
 
     &:before {
       content: "\2022"; // Utilisation d'un point rond pour chaque élément de la liste
-      color: $blue-cold;
+      color: variable.$blue-cold;
       display: inline-block;
       width: 1em;
       margin-left: -1em;
@@ -109,7 +101,7 @@ table[role="table"][aria-labelledby="difficulties-heading"] {
   margin-top: 5px;
 
   th {
-    background-color: $blue-cold;
+    background-color: variable.$blue-cold;
     color: #ffffff;
     font-weight: bold;
   }
@@ -128,3 +120,14 @@ table[role="table"][aria-labelledby="difficulties-heading"] {
     padding-right: 0; // Réduction de l'espacement à droite de la dernière colonne
   }
 }
+
+#sidebar-toggle {
+  height: 32px;
+}
+
+header{
+  h1{
+    color: variable.$black;
+  }
+}
+

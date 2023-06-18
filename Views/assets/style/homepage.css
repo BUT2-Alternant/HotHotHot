@@ -75,6 +75,37 @@ img {
   text-decoration: none;
 }
 
+#icon {
+  width: 4em;
+  height: 4em;
+  margin-right: 1em;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+button {
+  width: 23rem;
+  height: 2rem;
+  background-color: #D3E0EF;
+  border: none;
+  border-radius: 8px;
+}
+
+button:hover {
+  background-color: #97B2EC;
+  cursor: pointer;
+}
+
+h1 {
+  font-family: math;
+  font-size: 26px;
+}
+
 #temperature {
   width: 4em;
   text-align: center;
@@ -92,6 +123,7 @@ header {
   justify-content: center;
   align-items: center;
   margin-bottom: 1rem;
+  margin-top: 20px;
 }
 
 h1 {
@@ -140,19 +172,6 @@ li {
   width: 60%;
   margin-left: 20%;
   border-radius: 8px;
-}
-
-button {
-  width: 23rem;
-  height: 2rem;
-  background-color: #D3E0EF;
-  border: none;
-  border-radius: 8px;
-}
-
-button:hover {
-  background-color: #97B2EC;
-  cursor: pointer;
 }
 
 #outfit-icons {
