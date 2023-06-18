@@ -1,6 +1,13 @@
 // Déclaration des variables de couleur
-$primary-color: #337ab7;
-$secondary-color: #555555;
+$black: #130E0D;
+$blue-cold: #509CFF;
+$red-hot: #FC3F3F;
+$platinum-neutral: #E1E6E1;
+$yellow-sun: #FFC277;
+
+$global_modal_background: #D3E0EF;
+$global_modal_background_hover: #97B2EC;
+$global_section_background: aliceblue;
 $team-member-spacing: 40px; // Espacement entre les membres de l'équipe
 $team-member-image-width: 120px; // Largeur de l'image du membre de l'équipe
 $team-member-image-height: 110px; // Hauteur de l'image du membre de l'équipe
@@ -8,16 +15,16 @@ $team-member-image-height: 110px; // Hauteur de l'image du membre de l'équipe
 // Styles généraux
 body {
   font-family: Arial, sans-serif;
-  color: $secondary-color;
+  color: $black;
   margin: 20px;
 }
 
 h1 {
-  color: $primary-color;
+  color: $blue-cold;
 }
 
 h2 {
-  color: $primary-color;
+  color: $blue-cold;
   margin-top: 20px;
 }
 
@@ -36,16 +43,15 @@ table {
   td {
     padding: 8px;
     text-align: left;
-    border-bottom: 1px solid $secondary-color;
+    border-bottom: 1px solid $black;
   }
 }
 
 a {
-  color: $primary-color;
+  color: $blue-cold;
   text-decoration: none;
 }
 
-// Personnalisation des éléments spécifiques
 
 // Équipe
 .team {
@@ -82,7 +88,7 @@ ul[role="list"][aria-labelledby="roles-heading"] {
 
     &:before {
       content: "\2022"; // Utilisation d'un point rond pour chaque élément de la liste
-      color: $primary-color;
+      color: $blue-cold;
       display: inline-block;
       width: 1em;
       margin-left: -1em;
@@ -102,7 +108,7 @@ table[role="table"][aria-labelledby="difficulties-heading"] {
   margin-top: 5px;
 
   th {
-    background-color: $primary-color;
+    background-color: $blue-cold;
     color: #ffffff;
     font-weight: bold;
   }
