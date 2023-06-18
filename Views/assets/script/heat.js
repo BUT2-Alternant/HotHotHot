@@ -7,8 +7,8 @@ import {O_TEMPERATURE_LOCATION} from "../../../Constants/TemperatureConstants.js
 let currentTab = "";
 localStorage.setItem("ongletCourant", currentTab);
 
-let minTemp=[99,99];
-let maxTemp=[0,0];
+export let minTemp=[99,99];
+export let maxTemp=[0,0];
 
 let realtimecontroller = new RealtimeController();
 let historycontroller = new HistoryController();
