@@ -1,0 +1,129 @@
+// Déclaration des variables de couleur
+$black: #130E0D;
+$blue-cold: #509CFF;
+$red-hot: #FC3F3F;
+$platinum-neutral: #E1E6E1;
+$yellow-sun: #FFC277;
+
+$global_modal_background: #D3E0EF;
+$global_modal_background_hover: #97B2EC;
+$global_section_background: aliceblue;
+$team-member-spacing: 40px; // Espacement entre les membres de l'équipe
+$team-member-image-width: 120px; // Largeur de l'image du membre de l'équipe
+$team-member-image-height: 110px; // Hauteur de l'image du membre de l'équipe
+
+// Styles généraux
+body {
+  font-family: Arial, sans-serif;
+  color: $black;
+  margin: 20px;
+}
+
+h1 {
+  color: $blue-cold;
+}
+
+h2 {
+  color: $blue-cold;
+  margin-top: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+
+  th,
+  td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid $black;
+  }
+}
+
+a {
+  color: $blue-cold;
+  text-decoration: none;
+}
+
+
+// Équipe
+.team {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 10px;
+
+  span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: $team-member-spacing;
+
+    img {
+      width: $team-member-image-width;
+      height: $team-member-image-height;
+    }
+  }
+
+  span:last-child {
+    margin-right: 0;
+  }
+}
+
+// Rôles et Tâches
+ul[role="list"][aria-labelledby="roles-heading"] {
+  margin-top: 5px;
+  padding-left: 20px;
+
+  li {
+    margin-bottom: 10px;
+    font-weight: bold;
+
+    &:before {
+      content: "\2022"; // Utilisation d'un point rond pour chaque élément de la liste
+      color: $blue-cold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+  }
+}
+
+// Outils utilisés et organisation
+ul[role="list"][aria-labelledby="tools-heading"] {
+  margin-top: 5px;
+  padding-left: 20px;
+}
+
+// Planning de réalisation
+table[role="table"][aria-labelledby="planning-heading"],
+table[role="table"][aria-labelledby="difficulties-heading"] {
+  margin-top: 5px;
+
+  th {
+    background-color: $blue-cold;
+    color: #ffffff;
+    font-weight: bold;
+  }
+
+  td {
+    background-color: #f5f5f5;
+  }
+
+  th:first-child,
+  td:first-child {
+    padding-left: 0; // Réduction de l'espacement à gauche de la première colonne
+  }
+
+  th:last-child,
+  td:last-child {
+    padding-right: 0; // Réduction de l'espacement à droite de la dernière colonne
+  }
+}
