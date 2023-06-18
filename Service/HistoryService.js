@@ -20,8 +20,8 @@ export class HistoryService {
 
     listenHistoryTemperature() {
         this.#O_historyObserver.subscribe((data) => {
-            this.#O_historyModel.addTemperature(data[0]);
-            this.#O_historyModel.addTemperature(data[1]);
+            this.#O_historyModel.addTemperature(data.exterior);
+            this.#O_historyModel.addTemperature(data.interior);
         });
     }
 

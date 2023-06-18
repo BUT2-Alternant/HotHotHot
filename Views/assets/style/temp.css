@@ -61,14 +61,13 @@
 .temperature-div {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
 .temperature-text {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 /*# sourceMappingURL=temp.css.map */

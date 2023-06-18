@@ -21,6 +21,10 @@ export class TemperatureEntity {
     return this.#I_temperatureLocation;
   }
 
+  set location(I_temperatureLocation) {
+    this.#I_temperatureLocation = I_temperatureLocation;
+  }
+
   formattedTime() {
     const O_date = new Date(this.#I_timestamp * 1000);
     return O_date.toLocaleDateString() + " " + O_date.toLocaleTimeString();

@@ -13,9 +13,6 @@ export class WebSocketModel {
                 this.#O_websocket.send("Hello");
             }
         }
-
-        console.log(this.#O_websocket);
-
         return WebSocketModel.#O_singleton;
     }
 

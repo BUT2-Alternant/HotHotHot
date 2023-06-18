@@ -2,6 +2,7 @@ import {RealtimeService} from "../../../Service/RealtimeService.js";
 import {RealtimeController} from "../../../Controller/RealTimeController.js";
 import RecommandationsManager from "./recommendation.js";
 import {HistoryController} from "../../../Controller/HistoryController.js";
+import {O_TEMPERATURE_LOCATION} from "../../../Constants/TemperatureConstants.js";
 
 let currentTab = "";
 localStorage.setItem("ongletCourant", currentTab);
@@ -33,13 +34,6 @@ const config = {
     unit: "Celcius"
 };
 
-try {
-    let realtime = new RealtimeService();
-    realtime.listenRealtimeTemperature(function (event) {
-        console.log(event);
-    });
-} catch (e) {
-}
 const temperatureOutside = document.getElementById("temperatureOutside");
 const temperatureInside = document.getElementById("temperatureInside");
 const fieldOutside = document.getElementById("fieldOutside");
@@ -47,8 +41,8 @@ const fieldInside = document.getElementById("fieldInside");
 
 
 realtimecontroller.getTemperature(function (data) {
-    const tempExt = data[0];
-    const tempOut = data[1];
+    const tempExt = data.exterior;
+    const tempOut = data.interior;
 
     const value = tempExt.temperature;
     fieldOutside.innerText = value + "°C";
@@ -86,7 +80,7 @@ async function plotGraph() {
 
     // 20 dernières
     for(let i=0; i<lastElement.length; i++){
-        if(lastElement[i].temperatureLocation===1){
+        if(lastElement[i].temperatureLocation===O_TEMPERATURE_LOCATION.O_EXTERIOR){
             lastOutside.push(lastElement[i]);
         }else{
             lastInside.push(lastElement[i]);

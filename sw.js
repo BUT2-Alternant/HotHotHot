@@ -24,7 +24,6 @@ const O_FILES_PATH = {
   S_VIEW_FILE_MAIN_SCSS_PATH: "./Views/assets/style/main.scss",
   S_VIEW_FILE_VARIABLE_CSS_PATH: "./Views/assets/style/variable.css",
   S_VIEW_FILE_VARIABLE_SCSS_PATH: "./Views/assets/style/variable.scss",
-  S_VIEW_FILE_SCRIPT_JS_PATH: "./Views/assets/script/script.js",
   S_VIEW_FILE_TAB_CONTROLLER_JS_PATH: "./Views/assets/script/tabController.js",
   S_VIEW_FILE_ICON_PATH: "./Views/assets/images/icon.png",
   S_VIEW_FILE_ICON_MENU_PATH: "./Views/assets/images/icon_menu.png",

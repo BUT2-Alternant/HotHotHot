@@ -1,5 +1,6 @@
 import {S_API_URL} from "../Constants/ConnectionConstants.js";
 import {TemperatureEntity} from "../Entity/TemperatureEntity.js";
+import {O_TEMPERATURE_LOCATION} from "../Constants/TemperatureConstants.js";
 
 export class FetchModel {
     constructor() {
@@ -22,7 +23,7 @@ export class FetchModel {
             .then(data => {
                 const temperature = data?.capteurs?.[0];
                 if (temperature) {
-                    return new TemperatureEntity(temperature.Valeur, temperature.Timestamp, 0);
+                    return new TemperatureEntity(temperature.Valeur, temperature.Timestamp, O_TEMPERATURE_LOCATION.O_EXTERIOR);
                 } else {
                     throw new Error("Unable to fetch outside temperature from API.");
                 }
@@ -44,7 +45,7 @@ export class FetchModel {
             .then(data => {
                 const temperature = data?.capteurs?.[0];
                 if (temperature) {
-                    return new TemperatureEntity(temperature.Valeur, temperature.Timestamp, 1);
+                    return new TemperatureEntity(temperature.Valeur, temperature.Timestamp, O_TEMPERATURE_LOCATION.O_INTERIOR);
                 } else {
                     throw new Error("Unable to fetch outside temperature from API.");
                 }

@@ -2,7 +2,6 @@
 // GLOBAL ―――――――――――――――――――――――――
 
 
-
 // VARIABLES (Have fun) ―――――――――――――――――――――――――
 
 $TM-mainTint: #3d3d44;
@@ -15,9 +14,11 @@ $TM-bulbSize: $TM-width * 1.5;
 $TM-radius: 20px;
 $TM-graduationsStyle: 2px solid rgba(0, 0, 0, 0.5);
 $TM-bulbColor: variable.$blue-cold;
-$TM-mercuryColor : linear-gradient(variable.$red-hot, variable.$yellow-sun, $TM-bulbColor) no-repeat bottom;
+$TM-mercuryColor: linear-gradient(variable.$red-hot, variable.$yellow-sun, $TM-bulbColor) no-repeat bottom;
 
-@mixin border() { border: $TM-borderSize solid $TM-borderColor; }
+@mixin border() {
+  border: $TM-borderSize solid $TM-borderColor;
+}
 
 
 // THERMOMETER ―――――――――――――――――――――――――
@@ -94,15 +95,14 @@ $TM-mercuryColor : linear-gradient(variable.$red-hot, variable.$yellow-sun, $TM-
   }
 }
 
-.temperature-div{
+.temperature-div {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
-.temperature-text{
+.temperature-text {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
