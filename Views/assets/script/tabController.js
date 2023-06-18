@@ -11,7 +11,7 @@ function changerOnglet(event) {
     let ongletHistorique = document.getElementById('historique');
     let boutonHistorique = document.getElementById('bouton-historique');
 
-    if (donneeChargee === "false") {
+    if (!donneeChargee) {
         if (event.target.innerText === "Données") {
             ongletDonnee.style.display = "block"
             ongletDonnee.ariaDisabled = "false"

@@ -232,4 +232,9 @@ button:hover {
   border: 2px solid red;
 }
 
+button.add-button {
+  top: 1em;
+  position: relative;
+}
+
 /*# sourceMappingURL=homepage.css.map */
