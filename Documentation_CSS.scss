@@ -71,18 +71,40 @@ a {
   }
 }
 
-// Outils utilisés et organisation
-ul:nth-child(4) {
+// Rôles et Tâches
+ul[role="list"][aria-labelledby="roles-heading"] {
   margin-top: 5px;
+  padding-left: 20px;
+
+  li {
+    margin-bottom: 10px;
+    font-weight: bold;
+
+    &:before {
+      content: "\2022"; // Utilisation d'un point rond pour chaque élément de la liste
+      color: $primary-color;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+  }
+}
+
+// Outils utilisés et organisation
+ul[role="list"][aria-labelledby="tools-heading"] {
+  margin-top: 5px;
+  padding-left: 20px;
 }
 
 // Planning de réalisation
-table {
+table[role="table"][aria-labelledby="planning-heading"],
+table[role="table"][aria-labelledby="difficulties-heading"] {
   margin-top: 5px;
 
   th {
     background-color: $primary-color;
     color: #ffffff;
+    font-weight: bold;
   }
 
   td {
@@ -98,18 +120,4 @@ table {
   td:last-child {
     padding-right: 0; // Réduction de l'espacement à droite de la dernière colonne
   }
-}
-
-// Difficultés rencontrées et solutions apportées
-ol {
-  margin-top: 5px;
-
-  li {
-    padding-bottom: 5px; // Réduction de l'espacement entre les éléments de la liste
-  }
-}
-
-// Améliorations possibles
-ul:last-child {
-  margin-top: 5px;
 }
