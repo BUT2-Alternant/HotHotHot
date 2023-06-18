@@ -1,0 +1,259 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: math;
+}
+
+.icon-sidebar {
+  width: 32px;
+}
+
+.icons-sidebar {
+  width: 25px;
+  vertical-align: bottom;
+}
+
+button#sidebar-toggle {
+  width: fit-content;
+  float: left;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+button#sidebar-toggle {
+  transition: left 0.3s ease-in-out;
+  z-index: 1;
+}
+
+#sidebar {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 15rem;
+  height: 100%;
+  background-color: aliceblue;
+  color: black;
+  transition: left 0.3s ease-in-out;
+}
+#sidebar .sidebar-bot {
+  bottom: 1rem;
+  position: absolute;
+}
+
+#sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+h3 {
+  text-align: center;
+  margin-top: 1em;
+}
+
+#sidebar ul li {
+  padding: 10px 10px 10px 20px;
+}
+
+.sidebar-bot li {
+  padding: 10px 10px 0 10px !important;
+  margin: 0;
+}
+
+#sidebar.open {
+  transition: left 0.3s ease-in-out;
+}
+
+img {
+  width: 2rem;
+  padding: 4px;
+}
+
+#sidebar ul li a {
+  color: black;
+  text-decoration: none;
+}
+
+#icon {
+  width: 4em;
+  height: 4em;
+  margin-right: 1em;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+button {
+  width: 23rem;
+  height: 2rem;
+  background-color: #D3E0EF;
+  border: none;
+  border-radius: 8px;
+}
+
+button:hover {
+  background-color: #97B2EC;
+  cursor: pointer;
+}
+
+h1 {
+  font-family: math;
+  font-size: 26px;
+}
+
+#temperature {
+  width: 4em;
+  text-align: center;
+  margin-left: 1em;
+}
+
+#icon {
+  width: 4em;
+  height: 4em;
+  margin-right: 1em;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  margin-top: 20px;
+}
+
+h1 {
+  font-family: math;
+  font-size: 26px;
+}
+
+#donnee, #historique, #chargement {
+  margin-left: 20%;
+  background-color: aliceblue;
+  width: 60%;
+  margin-right: 20%;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.header-temperature {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.onglet-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#historique, #donnee {
+  display: none;
+}
+
+li {
+  margin-top: 1rem;
+}
+
+#affichage-temperature {
+  display: flex;
+}
+
+#selecteur {
+  border: none;
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
+  margin-left: 20%;
+  border-radius: 8px;
+}
+
+#outfit-icons {
+  display: flex;
+  align-items: center;
+}
+
+#outfit-icons {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  animation: fade-in 0.5s ease-in-out forwards;
+  justify-content: space-evenly;
+}
+
+.outfit-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.outfit-icon i {
+  font-size: 48px;
+}
+
+.outfit-text {
+  margin-top: 10px;
+  text-align: center;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#recommendations-sidebar {
+  width: 205px;
+  height: 85%;
+  position: fixed;
+  left: 1rem;
+  top: 5rem;
+  background-color: aliceblue;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.cloth {
+  width: 4em;
+  padding: 0;
+  margin: 0;
+}
+
+#message {
+  height: 2em;
+  margin-top: 1rem;
+}
+
+.cold {
+  border: 2px solid blue;
+}
+
+.normal {
+  border: 2px solid green;
+}
+
+.chaud {
+  border: 2px solid orange;
+}
+
+.tres-chaud {
+  border: 2px solid red;
+}
+
+button.add-button {
+  top: 1em;
+  position: relative;
+}
+
+/*# sourceMappingURL=homepage.css.map */

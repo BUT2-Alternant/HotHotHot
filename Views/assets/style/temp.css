@@ -1,0 +1,73 @@
+.termometer {
+  width: 20px;
+  background: #38383f;
+  height: 90px;
+  position: relative;
+  border: 5px solid #2a2a2e;
+  border-radius: 20px;
+  z-index: 1;
+  margin-bottom: 30px;
+}
+.termometer:before, .termometer:after {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+}
+.termometer:before {
+  width: 100%;
+  height: 20px;
+  bottom: 5px;
+  background: #38383f;
+  z-index: -1;
+}
+.termometer:after {
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  background-color: #509CFF;
+  bottom: -25px;
+  border: 5px solid #2a2a2e;
+  z-index: -3;
+  left: 50%;
+}
+.termometer .graduations {
+  height: 59%;
+  top: 20%;
+  width: 50%;
+}
+.termometer .graduations, .termometer .graduations:before {
+  position: absolute;
+  border-top: 2px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+.termometer .graduations:before {
+  content: "";
+  height: 34%;
+  width: 100%;
+  top: 32%;
+}
+.termometer .temperature {
+  bottom: 0;
+  background: linear-gradient(#FC3F3F, #FFC277, #509CFF) no-repeat bottom;
+  width: 100%;
+  border-radius: 20px;
+  background-size: 100% 90px;
+  transition: all 0.2s ease-in-out;
+}
+.termometer .temperature, .termometer .temperature:before, .termometer .temperature:after {
+  position: absolute;
+}
+
+.temperature-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.temperature-text {
+  display: flex;
+  flex-direction: column;
+}
+
+/*# sourceMappingURL=temp.css.map */

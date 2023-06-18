@@ -1,0 +1,154 @@
+@use "main";
+@use "variable";
+
+#temperature {
+  width: 4em;
+  text-align: center;
+  margin-left: 1em;
+}
+
+#icon {
+  width: 4em;
+  height: 4em;
+  margin-right: 1em;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  margin-top: 20px;
+}
+
+h1 {
+  font-family: math;
+  font-size: 26px;
+}
+
+#donnee, #historique, #chargement {
+  margin-left: 20%;
+  background-color: variable.$global_section_background;
+  width: 60%;
+  margin-right: 20%;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.header-temperature {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.onglet-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#historique, #donnee {
+  display: none;
+}
+
+
+li {
+  margin-top: 1rem;
+}
+
+#affichage-temperature {
+  display: flex;
+}
+
+#selecteur {
+  border: none;
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
+  margin-left: 20%;
+  border-radius: 8px;
+}
+
+#outfit-icons {
+  display: flex;
+  align-items: center;
+}
+
+#outfit-icons {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  animation: fade-in 0.5s ease-in-out forwards;
+  justify-content: space-evenly;
+}
+
+.outfit-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.outfit-icon i {
+  font-size: 48px;
+}
+
+.outfit-text {
+  margin-top: 10px;
+  text-align: center;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#recommendations-sidebar {
+  width: 205px;
+  height: 85%;
+  position: fixed;
+  left: 1rem;
+  top: 5rem;
+  background-color: variable.$global_section_background;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.cloth {
+  width: 4em;
+  padding: 0;
+  margin: 0;
+}
+
+#message {
+  height: 2em;
+  margin-top: 1rem;
+}
+
+.cold {
+  border: 2px solid blue;
+}
+
+.normal {
+  border: 2px solid green;
+}
+
+.chaud {
+  border: 2px solid orange;
+}
+
+.tres-chaud {
+  border: 2px solid red;
+}
+
+button.add-button {
+  top: 1em;
+  position: relative;
+}

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Documentation</title>
+    <link rel="icon" href="../assets/images/icon.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="../assets/style/documentation.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+</head>
+<body>
+
+<!-- Code commun a chacune des pages -->
+<button id="sidebar-toggle"><i class='fa fa-chevron-right icon-sidebar' aria-hidden='true'></i></button>
+
+<nav id="sidebar" style="left: -16em">
+    <h3 role="heading">Météo actuelle</h3>
+    <ul>
+        <li><a href="homepage.html"><img src="../assets/images/house2.png" class="icons-sidebar" alt="Accueil"> Accueil</a>
+        </li>
+        <li><a href="Documentation.html"><img src="../assets/images/documentation.png" class="icons-sidebar"
+                                              alt="Documentation"> Documentation</a></li>
+        <li><a href="https://github.com/BUT2-Alternant/HotHotHot"><img src="../assets/images/github-sign.png"
+                                                                       class="icons-sidebar" alt="Documentation"> Notre
+            GitHub</a></li>
+
+    </ul>
+
+    <ul class="sidebar-bot">
+        <li><b>Crédits :</b></li>
+        <li><a href="https://www.flaticon.com/authors/freepik" title="thermomètre icônes">Freepik</a></li>
+        <li><a href="https://www.flaticon.com/authors/rizky-maulidhani" title="écharpe icônes">rizky maulidhani</a></li>
+        <li><a href="https://www.flaticon.com/authors/superarticons" title="veste icônes">Superarticons</a></li>
+        <li><a href="https://www.flaticon.com/authors/creativenoys01" title="hiver icônes">Creativenoys01</a></li>
+        <li><a href="https://www.flaticon.com/authors/victoruler" title="veste icônes">Victoruler</a></li>
+        <li><a href="https://www.flaticon.com/authors/juicy-fish" title="t-shirt icônes">juicy_fish</a></li>
+        <li><a href="https://www.flaticon.com/authors/monkik" title="pantalon icônes">monkik</a></li>
+        <li><a href="https://www.flaticon.com/authors/good-ware" title="hydratant icônes">Good Ware</a></li>
+        <li><a href="https://www.flaticon.com/authors/juicy-fish" title="short en jean icônes">juicy_fish</a></li>
+    </ul>
+</nav>
+
+<header>
+    <img src="../assets/images/icon.png" alt="" id="icon">
+    <h1 role="heading" aria-label="Ce site va vous présenter la météo">Météo actuelle</h1>
+</header>
+<!-- fin du code commun a chacune des pages -->
+
+<h1 id="page-title">Documentation</h1>
+
+<h2 id="page-title">Présentation de l'équipe et du rôle de chacun</h2>
+
+<h2 id="team-heading">Équipe :</h2>
+<div class="team" role="list" aria-labelledby="team-heading">
+    <span role="listitem">
+      <img src="../assets/images/Mattias.png" alt="Photo de Mattias GERVILLIERS">
+      Mattias GERVILLIERS
+    </span>
+    <span role="listitem">
+      <img src="../assets/images/Luke.png" alt="Photo de Luke GONTIER">
+      Luke GONTIER
+    </span>
+    <span role="listitem">
+      <img src="../assets/images/Mélanie.png" alt="Photo de Mélanie HUGUES">
+      Mélanie HUGUES
+    </span>
+    <span role="listitem">
+      <img src="../assets/images/Guillaume.png" alt="Photo de Guillaume KUSIAK">
+      Guillaume KUSIAK
+    </span>
+    <span role="listitem">
+      <img src="../assets/images/Thibaut.png" alt="Photo de Thibaut LAHAIE">
+      Thibaut LAHAIE
+    </span>
+    <span role="listitem">
+      <img src="../assets/images/Marius.png" alt="Photo de Marius PISTORESI">
+      Marius PISTORESI
+    </span>
+    <span role="listitem">
+      <img src="../assets/images/Alessio.png" alt="Photo de Alessio PULITANO">
+      Alessio PULITANO
+    </span>
+    <span role="listitem">
+      <img src="../assets/images/Marion.png" alt="Photo de Marion VALLS">
+      Marion VALLS
+    </span>
+</div>
+
+<h2 id="roles-heading">Rôles et Tâches:</h2>
+<ul role="list" aria-labelledby="roles-heading">
+    <li>
+        Mattias GERVILLIERS : Développeur du projet, Architecture back-end, observers et FetchModel, et architecture des
+        services sauf DataService.
+    </li>
+    <li>
+        Luke GONTIER : Développeur du projet, Intégration des notifications.
+    </li>
+    <li>
+        Mélanie HUGUES : Développeuse et Designer du projet, création de la page Documentation.
+    </li>
+    <li>
+        Alessio PULITANO : Développeur du projet, a réalisé la structure des controllers
+    </li>
+    <li>
+        Thibaut LAHAIE : Développeur Designer du projet, création de la page d'accueil, ajout d'un système d'onglet
+        (Données, Historique), ajout d'une barre de navigation, ajout d'icones variées avec les mentions d'auteurs dans
+        la sidebar, Ajout d'un affichage permettant de connaître une tenue recommandée en fonction de la température
+        extérieure actuelle, création de variables SCSS contenant les couleurs définies de la charte graphique, ajout
+        d'animation lors de l'apparition de la tenue recommandée et lors de l'ouverture/fermeture de la sidebar, ajout
+        de la sidebar et des variables de couleurs sur la page Documentation.
+    </li>
+    <li>
+        Guillaume KUSIAK : Développeur du projet, Architecture back-end, History model, notificationModel et toute la
+        mise en cache et gestion mode hors-ligne avec PWA.
+    </li>
+    <li>
+        Marius PISTORESI : Développeur du projet, Gestion de la partie back-end, Création de l'architecture du site,
+        Administration du site (déploiement), Modèle de WS, DataService, Entités.
+    </li>
+    <li>
+        Marion VALLS : Développeuse et Designer du projet, Participation à la création du système d'onglet, récupération
+        de la température, récupération de l'historique, affichage de la température courante à partir des dernières
+        données reçues et affichage d'un thermomètre pour représenter cette température, affichage d'un graphique à
+        partir de l'historique des températures 20 dernières valeurs, affichages des valeurs minimales et maximales
+    </li>
+</ul>
+
+<h2 id="tools-heading">Outils utilisés :</h2>
+<p>Nous avons utilisé les outils suivants :</p>
+<ul role="list" aria-labelledby="tools-heading">
+    <li>Github : <a href="https://github.com/BUT2-Alternant/HotHotHot">https://github.com/BUT2-Alternant/HotHotHot</a>
+    </li>
+    <li>Visual Studio Code (avec une extension pour le SCSS)</li>
+    <li>PhpStorm (avec une extension pour le SCSS)</li>
+</ul>
+
+<h2 id="planning-heading">Planning de réalisation :</h2>
+<p>Voici notre planning prévisionnel pour la réalisation du projet :</p>
+<table role="table" aria-labelledby="planning-heading">
+    <tr>
+        <th>Tâche</th>
+        <th>Date de début</th>
+        <th>Date de fin</th>
+    </tr>
+    <tr>
+        <td>Développement de l'architecture du bac, observers et FetchModel</td>
+        <td>01/06/2023</td>
+        <td>03/06/2023</td>
+    </tr>
+    <tr>
+        <td>Intégration des notifications</td>
+        <td>02/06/2023</td>
+        <td>04/06/2023</td>
+    </tr>
+    <tr>
+        <td>Création de la page Documentation</td>
+        <td>03/06/2023</td>
+        <td>06/06/2023</td>
+    </tr>
+    <tr>
+        <td>Création de la page d'accueil, ajout d'un système d'onglet, ajout d'une barre de navigation</td>
+        <td>04/06/2023</td>
+        <td>07/06/2023</td>
+    </tr>
+    <tr>
+        <td>Architecture du Back, History model, notificationModel et toute la mise en cache et gestion mode hors-ligne
+            avec PWA
+        </td>
+        <td>01/06/2023</td>
+        <td>07/06/2023</td>
+    </tr>
+    <tr>
+        <td>Gestion de la partie back Création de l'architecture du site, Administration du site (déploiement), Modèle
+            de WS, DataService, Entités
+        </td>
+        <td>02/06/2023</td>
+        <td>08/06/2023</td>
+    </tr>
+    <tr>
+        <td>Récupération de la température, récupération de l'historique</td>
+        <td>03/06/2023</td>
+        <td>09/06/2023</td>
+    </tr>
+    <tr>
+        <td>Test et correction du projet</td>
+        <td>10/06/2023</td>
+        <td>17/06/2023</td>
+    </tr>
+    <tr>
+        <td>Fin du projet, merge sur le github des dernières modifications</td>
+        <td>17/06/2023</td>
+        <td>18/06/2023</td>
+    </tr>
+</table>
+
+<h2 id="difficulties-heading">Difficultés rencontrées :</h2>
+<table role="table" aria-labelledby="difficulties-heading">
+    <tr>
+        <th>Difficulté</th>
+    </tr>
+    <tr>
+        <td>Difficulté à gérer la connexion WebSocket</td>
+    <tr>
+        <td>Difficulté a tester l'affichage sans avoir les données.</td>
+    </tr>
+    <tr>
+        <td>Conflit git lors d'une merge requête réalisée par un autre étudiant qui a écrasé mon travail.</td>
+    </tr>
+    <tr>
+        <td>Type des données reçu finalement pas celui que nous pensions initialement, ce qui provoquait des erreurs.
+        </td>
+    </tr>
+    <tr>
+        <td>Onglet Données apparaissait automatiquement au chargement d'une valeur même
+            si on était dans l'onglet Historique.
+        </td>
+    </tr>
+</table>
+</body>
+<script src="../assets/script/sidebarController.js"></script>
+</html>
