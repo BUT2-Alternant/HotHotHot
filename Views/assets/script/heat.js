@@ -3,9 +3,7 @@ import {RealtimeController} from "../../../Controller/RealTimeController.js";
 import RecommandationsManager from "./recommendation.js";
 import {HistoryController} from "../../../Controller/HistoryController.js";
 
-let donneeChargee = false;
 let currentTab = "";
-localStorage.setItem("donneeChargee", donneeChargee);
 localStorage.setItem("ongletCourant", currentTab);
 
 let minTemp=[99,99];
@@ -56,10 +54,9 @@ realtimecontroller.getTemperature(function (data) {
     fieldOutside.innerText = value + "°C";
     temperatureOutside.style.height = (value - config.minTemp) / (config.maxTemp - config.minTemp) * 100 + "%";
     temperatureOutside.dataset.value = value + "°C";
-    donneeChargee = true;
-    localStorage.setItem("donneeChargee", value);
 
     RecommandationsManager.afficherRecommandations(value);
+    afficherDonnee();
     messageWaitData("donnee");
 
     const value2 = tempOut.temperature;
